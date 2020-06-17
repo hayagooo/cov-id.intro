@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVid | Berita</title>
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
+    <!-- Include Css file -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/Chart.min.css">
+    <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" href="../css/fontawesome.min.css">
+    <link rel="stylesheet" href="../css/slick.css">
+    <link rel="stylesheet" href="../css/slick-theme.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/aos.css">
+    <link rel="stylesheet" href="../css/animate.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/> -->
+    <!-- Include Js file -->
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/Chart.min.js"></script>
+    <script src="../js/all.min.js"></script>
+    <script src="../js/fontawesome.min.js"></script>
+    <script src="../js/slick.min.js"></script>
+    <script src="../js/typeit.min.js"></script>
+    <script src="../js/aos.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/navbar-black.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-light pl-md-5 pl-5">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../img/favicon.png" width="30px" id="image_nav" class="position-relative" alt="sidescript logo png">
+                <p class="m-0 d-inline position-relative title_show" id="title_nav">COVid</p>
+            </a>
+            <div class="btn-group btn-menu-nav position-relative">
+                <button class="bg-white border-0 d-md-none" type="button" id="toggler-nav" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <div class="burger-nav text-right">
+                        <div></div>
+                        <div></div>
+                    </div>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse pr-5 pr-md-0" id="collapsibleNavId">
+                <ul class="navbar-nav ml-auto my-0 mt-lg-0 position-relative">
+                    <li class="nav-item position-relative menu-item">
+                        <a class="nav-link text-black" href="../index.html">BERANDA</a>
+                    </li>
+                    <li class="nav-item position-relative menu-item">
+                        <a class="nav-link text-black" href="peta.html">PETA</a>
+                    </li>
+                    <li class="nav-item position-relative menu-item active-nav">
+                        <a class="nav-link text-black" href="berita.html">BERITA</a>
+                    </li>
+                    <li class="nav-item position-relative menu-item">
+                        <a class="nav-link text-black" href="#pencegahan-id">PENCEGAHAN</a>
+                    </li>
+                    <li class="nav-item position-relative menu-item">
+                        <a class="nav-link text-black" href="#toko-id">TOKO</a>
+                    </li>
+                    <li class="nav-item position-relative ml-md-2">
+                        <a class="btn btn-danger rounded-pill shadow-danger text-light px-4 btn-sm mt-1" href="#" role="button" id="btn-login">
+                            <i class="fas fa-user"></i> Login
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container-fluid py-5 position-relative">
+        <div class="container pt-4 mt-5">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav id="navbar-news" class="navbar-expand-sm position-relative navbar-light py-3 pb-3 px-md-0 px-2 bg-white border-bottom">
+                        <button class="navbar-toggler mt-1 d-lg-none border-0" style="z-index: 20;" type="button" data-toggle="collapse" data-target="#news-navbar" aria-controls="collapsibleNavId"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                        <div class="collapse navbar-collapse mt-md-0 mt-4" id="news-navbar">
+                            <ul class="navbar-nav mr-auto mt-2 mt-lg-0" id="news-list">
+                                <li class="nav-item active-nav_news" id="first-news">
+                                    <a class="nav-link" href="#">Semua <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Kasus pelanggaran</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Kondisi Rumah Sakit</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Positif</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Lainnya</a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                                        <a class="dropdown-item" href="#">Kematian</a>
+                                        <a class="dropdown-item" href="#">Sembuh</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="position-absolute search-news">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="text" name="key" id="key" class="form-control w-100" placeholder="Cari berita" aria-describedby="helpId">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text bg-danger text-white border-0"><i class="fas fa-search"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function() {
+                let windowSize = $(window).width();
+                $(window).scroll(function() {
+                    let top = window.pageYOffset || document.documentElement.scrollTop;
+                    if(top >= 90) {
+                        $('#navbar-news').addClass('navbar-news-fix shadow-sm animate__animated animate__bounceInDown border-bottom-0').removeClass('border-bottom');
+                        $('.search-news').addClass('pr-3');
+                        $('#first-news').addClass('ml-3');
+                    } else {
+                        $('#navbar-news').removeClass('navbar-news-fix shadow-sm animate__animated animate__bounceInDown border-bottom-0').addClass('border-bottom');
+                        $('.search-news').removeClass('pr-3');
+                        $('#first-news').removeClass('ml-3');
+                    }
+                });
+            });
+        </script>
+        <div class="container bg-white rounded position-relative mt-3">
+            <div class="row">
+                <div class="col-md-7">
+                    <h3 class="ml-2 text-danger myfont-arciform">Berita covid terkini</h3>
+                    <div class="news">
+                        <div>
+                            <div class="card bg-dark border-0 shadow-sm card-berita position-relative">
+                                <img class="h-100 position-absolute" src="../img/covid.jpg" alt="berita-covid">
+                                <div class="position-relative tools text-center w-100 tools-hide">
+                                    <button class="btn btn-transparent mx-1 px-5 text-white rounded border-light"><i class="fas fa-share-alt"></i> Share</button>
+                                </div>
+                                <div class="card-body w-100 bg-white">
+                                    <h5 class="card-title mb-1">Banyak pasien sembuh di Wuhan</h5>
+                                    <p class="responses">
+                                        <span class="mr-3"><i class="text-danger fas fa-eye"></i> 1,4k</span>
+                                        <span class="mr-3"><i class="text-danger fas fa-comments"></i> 520</span>
+                                        <span><i class="text-danger fas fa-share-alt"></i> 120</span> 
+                                        <span class="mx-2 d-sm-none">|</span>
+                                        <span class="mt-1 mt-sm-0 d-inline-block"><i class="fas fa-info-circle mr-1 text-danger"></i> Wuhan, 20 Mei 2020</span>
+                                    </p>
+                                    <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, illum? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum, quisquam!...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="card bg-dark border-0 shadow-sm card-berita position-relative">
+                                <img class="h-100 position-absolute" src="../img/news/warga_kebumen.jpg" alt="berita-covid">
+                                <div class="position-relative tools text-center w-100 tools-hide">
+                                    <button class="btn btn-transparent mx-1 px-5 text-white rounded border-light"><i class="fas fa-share-alt"></i> Share</button>
+                                </div>
+                                <div class="card-body w-100 bg-white">
+                                    <h5 class="card-title mb-1">Warga kebumen meninggal positif corona</h5>
+                                    <p class="responses">
+                                        <span class="mr-3"><i class="text-danger fas fa-eye"></i> 1,4k</span>
+                                        <span class="mr-3"><i class="text-danger fas fa-comments"></i> 520</span>
+                                        <span><i class="text-danger fas fa-share-alt"></i> 120</span> 
+                                        <span class="mx-2 d-sm-none">|</span>
+                                        <span class="mt-1 mt-sm-0 d-inline-block"><i class="fas fa-info-circle mr-1 text-danger"></i> Jakarta, 20 Juni 2020</span>
+                                    </p>
+                                    <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, illum? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum, quisquam!...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="card bg-dark border-0 shadow-sm card-berita position-relative">
+                                <img class="h-100 position-absolute" src="../img/news/2_wni.jpg" alt="berita-covid">
+                                <div class="position-relative tools text-center w-100 tools-hide">
+                                    <button class="btn btn-transparent mx-1 px-5 text-white rounded border-light"><i class="fas fa-share-alt"></i> Share</button>
+                                </div>
+                                <div class="card-body w-100 bg-white">
+                                    <h5 class="card-title mb-1">Presiden Jokowi umumkan 2 WNI positif corona</h5>
+                                    <p class="responses">
+                                        <span class="mr-3"><i class="text-danger fas fa-eye"></i> 1,4k</span>
+                                        <span class="mr-3"><i class="text-danger fas fa-comments"></i> 520</span>
+                                        <span><i class="text-danger fas fa-share-alt"></i> 120</span> 
+                                        <span class="mx-2 d-sm-none">|</span>
+                                        <span class="mt-1 mt-sm-0 d-inline-block"><i class="fas fa-info-circle mr-1 text-danger"></i> Jakarta, 20 Juni 2020</span>
+                                    </p>
+                                    <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, illum? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum, quisquam!...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-area footer--light">
+        <div class="footer-big py-2 py-sm-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-12">
+                        <div class="footer-widget">
+                            <div class="widget-about">
+                                <div class="text-center">
+                                    <img src="../img/favicon.png" alt="Covid_logo" class="w-50 d-inline-block">
+                                </div>
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae molestias nisi eos corporis ad optio debitis!</p>
+                                <ul class="contact-details">
+                                    <li>
+                                        <span class="icon-earphones"></span> Call Us:
+                                        <a href="tel:+6285645027785">+6285645027785</a>
+                                    </li>
+                                    <li>
+                                        <span class="icon-envelope-open"></span>
+                                        <a href="mailto:khusnul.ninno15@gmail.com">khusnul.ninno15@gmail.com</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6 col-6">
+                                <div class="footer-widget">
+                                    <div class="footer-menu footer-menu--1">
+                                        <h4 class="footer-widget-title">Bantuan</h4>
+                                        <ul>
+                                            <li><a href="#">Kontak kami</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="#">F.A.Q</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="#">Rest API</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>      
+                            <div class="col-md-4 col-sm-6 col-6">
+                                <div class="footer-widget">
+                                    <div class="footer-menu">
+                                        <h4 class="footer-widget-title">Informasi</h4>
+                                        <ul>
+                                            <li><a href="#">COVid</a></li>
+                                            <li><a href="#">Sidescript</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-12 p-sm-center">
+                                <div class="footer-widget">
+                                    <div class="footer-menu no-padding" id="nav-footer">
+                                        <h4 class="footer-widget-title">Nav Footer</h4>
+                                        <ul>
+                                            <li><a href="#">Beranda</a></li>
+                                            <li><a href="#peta-id">Peta</a></li>
+                                            <li><a href="#berita-id">Berita</a></li>
+                                            <li><a href="#pencegahan-id">Pencegahan</a></li>
+                                            <li><a href="#toko-id">Toko</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6 col-6 text-center">
+                                <img src="../img/playstore.png" class="w-100 mt-3 d-inline-block" alt="playstore">
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-6 text-center">
+                                <img src="../img/github.png" class="mt-1 w-100 d-inline-block" alt="github">
+                            </div>
+                            <div class="col-md-6 col-sm-12 pt-2 pt-md-0">
+                                <div class="footer-widget">
+                                    <div class="footer-menu no-padding p-sm-center">
+                                        <h4 class="footer-widget-title mb-0">Follow Us</h4>
+                                        <p class="icons-social">
+                                            <span class="ml-0"><a href="#"><i class="fab fa-instagram"></i></a></span>
+                                            <span><a href="#"><i class="fab fa-whatsapp"></i></a></span>
+                                            <span><a href="#"><i class="fab fa-facebook"></i></a></span>
+                                            <span><a href="#"><i class="fab fa-behance"></i></a></span>
+                                            <span><a href="#"><i class="fab fa-dribbble"></i></a></span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mini-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="copyright-text">
+                            <p>© 2020
+                                <a href="#">COVid</a>. All rights reserved. Created by
+                                <a href="#">Sidescript.dev <img src="../img/team.png" alt="sidescript_logo" width="25px"> </a>
+                            </p>
+                        </div>
+                        <a href="#" class="text-white">
+                            <div class="go_top bg-danger">
+                                <i class="fas fa-arrow-up"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

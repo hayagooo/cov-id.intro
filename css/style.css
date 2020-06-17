@@ -4,12 +4,22 @@
 }
 html {
     scroll-behavior: smooth;
+    width: 100% !important;
+    overflow-x: hidden !important;
 }
+
 body {
+    width: 100% !important;
     overflow-x: hidden !important;
 }
 /* font declaration */
-
+.bg-black {
+    background-color: black !important;
+    color: white !important;
+}
+.text-black {
+    color: black !important;
+}
 @font-face {
     font-family: arciform;
     src: url(../fonts/Arciform.otf);
@@ -22,11 +32,52 @@ body {
     font-family: poppins;
     src: url(../fonts/Poppins-Regular.ttf);
 }
+.map-indo {
+    height: 200px;
+}
+.map-indo #sumatra img {
+    height: 125px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.map-indo #jawa img {
+    height: 45px;
+    position: absolute;
+    top: 122px;
+    left: 109px;
+}
+.map-indo #kalimantan img {
+    height: 94px;
+    position: absolute;
+    top: 8px;
+    left: 139px;
+}
+.map-indo #sulawesi img {
+    position: absolute;
+    height: 74px;
+    left: 243px;
+    top: 40px;
+}
+.map-indo #irian img {
+    position: absolute;
+    height: 137px;
+    left: 290px;
+    top: 35px;
+}
 
 /* end font declaration */
 /* my element declaration */
 p {
     font-family: monserrat;
+}
+.img-md-100 {
+    width: 75%;
+}
+@media only screen and (max-width: 767px) {
+    .img-md-100 {
+        width: 100%;
+    }
 }
 h1, h2, h3, h4, h5, h6, button {
     font-family: poppins;
@@ -271,11 +322,13 @@ header {
     position: relative;
     left: -100px !important;
     opacity: 0;
+    color: #ee4141 !important;
 }
 .title_show {
     transition: all .3s;
     position: relative;
     left: 0px;
+    color: #ee4141 !important;
     opacity: 1;
 }
 @media screen and (max-width: 1220px) {
@@ -290,6 +343,9 @@ header {
     }
     .form-search-top {
         top: 15px;
+    }
+    .navbar {
+        background-color: white !important;
     }
 }
 
@@ -375,6 +431,47 @@ header {
 /* jumbotron declaration */
 .slick-slide {
     margin: 25px 10px !important;
+}
+.btn-grup-jumbotron {
+    text-align: left;
+}
+.p-sm-justify {
+    text-align: left;
+}
+.p-sm-center {
+    text-align: left;
+}
+.d-sm-none {
+    display: inline-block !important;
+}
+@media screen and (max-width: 767px) {
+    .btn-grup-jumbotron {
+        text-align: center;
+    }
+    .p-sm-justify {
+        text-align: justify;
+    } 
+    .d-sm-none {
+        display: none !important;
+    }
+    .p-sm-center {
+        text-align: center;
+    }
+    #nav-footer ul li {
+        transition: all .3s;
+    }
+    #nav-footer ul li:hover {
+        background-color: #ee4141;
+        margin: 5px 0px;
+        border-radius: 5px;
+        color: white;
+    }
+    #nav-footer ul li a {
+        transition: all .3s;
+    }
+    #nav-footer ul li:hover a {
+        color: white;
+    }
 }
 .slick-dots li button {
     width: 10px !important;
@@ -624,6 +721,7 @@ a:hover {
     background-image: url('../img/teamwork.jpg');
     background-size: cover;
     background-attachment: fixed;
+    background-position-x: center;
 }
 .profile {
     width: 120px;
@@ -677,8 +775,9 @@ a:focus,a:hover {
     box-shadow:0 4px 4px rgba(0,0,0,.1);
     -webkit-border-radius:50%;
     border-radius:50%;
-    right: 50px;
-    right: 50px;
+    right: -200px;
+    opacity: 0;
+    transition: all .3s;
     z-index:111;
     transition: all .3s;
     bottom:50px;
@@ -706,7 +805,7 @@ a:focus,a:hover {
  margin-bottom:40px
 }
 .footer--light {
- background:#e7e8ed
+ background:#ede7e7
 }
 .footer-big .footer-menu ul li a,.footer-big p,.footer-big ul li {
  color:#898b96
@@ -784,3 +883,323 @@ a:focus,a:hover {
 }
 
 /* end footer declaration */
+
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+/* other page */
+/* map page declaration */
+
+#bg-map {
+    background-size: cover;
+    background-attachment: fixed;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all .3s;
+    width: 100%;
+    opacity: 0.5;
+    height: 100%;
+    overflow: hidden !important;
+}
+.bg-mob {
+    left: 0;
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+} 
+#peta-content {
+    position: relative;
+    height: 450px;
+}
+#sumatra-parent img {
+    position: absolute;
+    height: 230px;
+    left: 0;
+    top: 0;
+}
+#jawa-parent img {
+    position: absolute;
+    height: 100px;
+    top: 225px;
+    left: 193px;
+}
+#kalimantan-parent img {
+    position: absolute;
+    height: 190px;
+    top: 3px;
+    left: 260px;
+}
+#sulawesi-parent img {
+    position: absolute;
+    height: 170px;
+    top: 70px;
+    left: 466px;
+}
+#irian-parent img {
+    position: absolute;
+    height: 250px;
+    left: 580px;
+    top: 51px;
+}
+#bg-gradient-map {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2) ,transparent);
+}
+#maps {
+    display: none;
+}
+@media screen and (max-width: 992px) {
+    #maps-desktop {
+        display: none !important;
+    }
+    #maps {
+        display: inline-block;
+    }
+    #chart-parent {
+        overflow-x: auto;
+    }
+    canvas#chart-covid {
+        height: 300px !important;
+    }
+    #data {
+        position: relative;
+        top: -10px;
+    }
+    .bg-mob {
+        left: 0;
+        position: absolute;
+        top: 0;
+        bottom: 0 !important;
+        width: 120%;
+        background-size: cover;
+        background-attachment: fixed;
+    } 
+} 
+@media screen and (max-width: 600px) {
+    .bg-mob {
+        left: 0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        height: 140%;
+        width: auto;
+        background-size: cover;
+        background-attachment: fixed;
+    } 
+}
+@media screen and (min-width: 992px) {
+    canvas#chart-covid {
+        height: 400px !important;
+    }
+} 
+
+#positif-id {
+    background-color: rgb(240, 222, 58);
+}
+#sembuh-id {
+    background-color: rgb(92, 219, 149);
+}
+#meninggal-id {
+    background-color: rgb(238, 65, 65);
+}
+.conditionCovid-label {
+    font-size: .8rem;
+}
+
+.carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    transition: all .3s;
+    border-radius: 200px !important;
+    background-color: #ee4141;
+    display: inline-block;
+    border: none !important;
+}
+.carousel-indicators .active {
+    width: 30px !important;
+    height: 10px;
+    transition: all .3s;
+    border-radius: 100px !important;
+    background-color: #ee4141;
+}
+/* end map page declaration */
+/* beritap page declaration */
+
+#berita-page {
+    background-image: url('../img/wallpaper/news.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 400px;
+}
+#news-list li a.nav-link {
+    padding: 0 !important;
+}
+#news-list {
+    text-align: center !important;
+}
+#news-list li a.nav-link:nth-child(1) {
+    padding: 0 !important;
+    position: relative;
+}
+#news-list li, .active-nav_news {
+    margin: 0px 5px;
+    text-align: center;
+    position: relative;
+    padding: 7px 15px;
+}
+#news-list li a {
+    transition: all .3s;
+}
+#news-list li:hover a , .active-nav_news a {
+    color: white !important;
+}
+#news-list li:last-child:hover a {
+    color: black !important;
+}
+#news-list li a.nav-link {
+    position: relative;
+    z-index: 10;
+}
+#news-list li::before, .active-nav_news::before {
+    content: '';
+    text-align: center;
+    position: absolute;
+    z-index: 0;
+    bottom: 0%;
+    left: 0px;
+    top: 0%;
+    border-radius: 5px;
+    height: 100% !important;
+    width: 0%;
+    transition: all .3s;
+    background-color: #ee4141;
+}
+#news-list li:hover::before, .active-nav_news::before{
+    content: '';
+    width: 100% !important;
+    transition: all .3s;
+}
+#news-list li:last-child::before {
+    content: '';
+    background-color: white !important;
+}
+#news-list li:last-child:hover::before {
+    content: '';
+    background-color: white !important;
+}
+.card-news {
+    height: 400px;
+    overflow: hidden;
+    transition: all .3s;
+}
+.card-news:hover {
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1)!important;
+}
+.card-news img {
+    background-size: cover;
+}
+.card-news .card-body {
+    position: absolute;
+    bottom: 0px;
+    opacity: 1;
+}
+.card-news .card-body .responses {
+    font-size: .75rem;
+}
+.card-news .card-body .card-text {
+    position: absolute;
+    bottom: -100px;
+    opacity: 0;
+    transition: all .3s;
+}
+.card-news .card-body .card-text {
+    font-size: .8rem;
+}
+.card-news .card-body:hover .card-text {
+    position: relative;
+    bottom: 0;
+    opacity: 1;
+    transition: all .3s;
+}
+.card-news img {
+    transition: all .3s;
+}
+.card-news .tools {
+    transition: all .3s;
+    position: relative;
+    top: 120px;
+}
+.card-news .card-head img {
+    transition: all .3s;
+}
+.card-news .card-head:hover img {
+    transition: all .3s;
+    opacity: .5;
+    transform: scale(1.1);
+}
+.card-news .card-head .tools-news {
+    transition: all .3s;
+    top: -100px;
+    opacity: 0;
+}
+.card-news .card-head:hover .tools-news {
+    transition: all .3s;
+    opacity: 1;
+    top: 120px !important;
+    animation: bounce;
+    animation-duration: 1s;
+}
+.card-news .card-head .tools-news:hover button {
+    background-color: white;
+    color: black !important;
+}
+.search-news {
+    right: 0px;
+    top: 16px;
+    width: 35%;
+}
+@media screen and (max-width: 767px) {
+    .search-news {
+        right: 0px;
+        top: 16px;
+        width: 75%;
+    }   
+}
+.navbar-news-fix {
+    position: fixed !important;
+    left: 0;
+    right: 0;
+    width: 100%;
+    top: 58px;
+    z-index: 100;
+    padding: .5rem 1rem 1rem 1rem;
+}
+.card-other-news {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+.card-other-news .card-body {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+}
+/* end beritap page declaration */
+
+/* end other page */

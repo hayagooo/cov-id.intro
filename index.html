@@ -30,6 +30,7 @@
     <script src="js/typeit.min.js"></script>
     <script src="js/aos.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/navbar.js"></script>
 </head>
 <body>
     <header>
@@ -50,7 +51,7 @@
                     </div>
                 </button>
             </div>
-            <form method="POST" class="search-nav-hide">
+            <form method="POST" class="search-nav-hide" id="form-search-desktop">
                 <div class="input-group positon-relative h-100 w-75">
                     <input type="text" class="form-search-nav border-0 positon-relative h-100 w-50 px-3" placeholder="Cari sesuatu...">
                     <div class="input-group-append">
@@ -115,12 +116,14 @@
             <div class="overlay-black"></div>
             <div class="container position-relative">
                 <div class="row">
-                    <div class="col-md-7">
+                    <div class="col-lg-7 col-md-8">
                         <div data-aos="fade-right">
                             <h1 class="text-white myfont-arciform mb-4">Selamatkan dunia dengan <br> <span id="typeit_corona"></span></h1>
-                            <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas voluptatum eius odio? Aspernatur itaque iusto cupiditate eum modi doloremque rem?</p>
-                            <button class="btn btn-danger shadow-danger rounded-pill px-5">Lebih detail</button>
-                            <button class="btn text-white border-danger btn-trasparent mx-2 shadow-sm rounded-pill px-5">Tracker covid</button>
+                            <p class="text-white p-sm-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas voluptatum eius odio? Aspernatur itaque iusto cupiditate eum modi doloremque rem?</p>
+                            <div class="btn-grup-jumbotron">
+                                <a href="common/about.html" class="btn btn-danger shadow-danger rounded-pill px-5">Lebih detail</a>
+                                <a href="common/peta.html" class="btn text-white my-2 my-sm-0 border-danger btn-trasparent mx-sm-2 mx-0 shadow-sm rounded-pill px-5">Tracker covid</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -129,11 +132,11 @@
     </div>
 
     <div class="container py-4" id="peta-id">
-        <h2 class="clr-red myfont-arciform px-3"><i class="fas fa-map-marked-alt"></i> Peta</h2>
+        <h2 class="clr-red myfont-arciform px-2"><i class="fas fa-map-marked-alt"></i> Peta</h2>
         <div class="row">
             <div class="col-md-6 my-2">
                 <div>
-                    <p class="px-3 mb-0">
+                    <p class="mb-0 p-sm-justify">
                         Lorem ipsum dolor sit amet consectetur adipisicing. quaerat nobis magni fugit unde odio corporis id doloribus quod nihil!
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident voluptatem quod molestias.
                     </p>
@@ -141,22 +144,22 @@
                 <div class="trackers">
                     <div class="px-3">
                         <div class="row text-center px-3">
-                            <div class="col-4 bg-danger py-2" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
+                            <div class="col-md-4 col-sm-6 col-8 bg-danger py-2" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
                                 <img src="img/icon/indonesia.svg" class="d-inline-block mr-1" width="20px" alt="Indonesia_icon">
                                 <h6 class="d-inline text-white" style="position: relative; top: 2px;">Indonesia</h6>
                             </div>
                         </div>
                         <div class="rounded shadow mb-3">
                             <div class="row text-center px-3 py-3">  
-                                <div class="col-4">
+                                <div class="col-md-4 col-sm-6 col-6">
                                     <p class="mb-0">Positif</p>
                                     <h3 class="myfont-arciform mb-0 text-danger">35.295</h3>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-md-4 col-sm-6 col-6">
                                     <p class="mb-0">Sembuh</p>
                                     <h3 class="myfont-arciform mb-0 text-danger">12.636</h3>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-md-4 col-sm-12 col-12 mt-sm-3 mt-3 mt-md-0">
                                     <p class="mb-0">Meninggal</p>
                                     <h3 class="myfont-arciform mb-0 text-danger">2.000</h3>
                                 </div>
@@ -165,22 +168,22 @@
                     </div>
                     <div class="px-3">
                         <div class="row text-center px-3">
-                            <div class="col-4 bg-danger py-2" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
+                            <div class="col-md-4 col-sm-6 col-8 bg-danger py-2" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
                                 <img src="img/icon/indonesia.svg" class="d-inline-block mr-1" width="20px" alt="Indonesia_icon">
                                 <h6 class="d-inline text-white" style="position: relative; top: 2px;">Sumatra</h6>
                             </div>
                         </div>
                         <div class="rounded shadow mb-3">
                             <div class="row text-center px-3 py-3">  
-                                <div class="col-4">
+                                <div class="col-md-4 col-sm-6 col-6">
                                     <p class="mb-0">Positif</p>
                                     <h3 class="myfont-arciform mb-0 text-danger">35.295</h3>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-md-4 col-sm-6 col-6">
                                     <p class="mb-0">Sembuh</p>
                                     <h3 class="myfont-arciform mb-0 text-danger">12.636</h3>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-md-4 col-sm-12 col-12 mt-sm-3 mt-3 mt-md-0">
                                     <p class="mb-0">Meninggal</p>
                                     <h3 class="myfont-arciform mb-0 text-danger">2.000</h3>
                                 </div>
@@ -189,22 +192,22 @@
                     </div>
                     <div class="px-3">
                         <div class="row text-center px-3">
-                            <div class="col-4 bg-danger py-2" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
+                            <div class="col-md-4 col-sm-6 col-8 bg-danger py-2" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
                                 <img src="img/icon/indonesia.svg" class="d-inline-block mr-1" width="20px" alt="Indonesia_icon">
                                 <h6 class="d-inline text-white" style="position: relative; top: 2px;">Jawa</h6>
                             </div>
                         </div>
                         <div class="rounded shadow mb-3">
                             <div class="row text-center px-3 py-3">  
-                                <div class="col-4">
+                                <div class="col-md-4 col-sm-6 col-6">
                                     <p class="mb-0">Positif</p>
                                     <h3 class="myfont-arciform mb-0 text-danger">35.295</h3>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-md-4 col-sm-6 col-6">
                                     <p class="mb-0">Sembuh</p>
                                     <h3 class="myfont-arciform mb-0 text-danger">12.636</h3>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-md-4 col-sm-12 col-12 mt-sm-3 mt-3 mt-md-0">
                                     <p class="mb-0">Meninggal</p>
                                     <h3 class="myfont-arciform mb-0 text-danger">2.000</h3>
                                 </div>
@@ -213,22 +216,22 @@
                     </div>
                     <div class="px-3">
                         <div class="row text-center px-3">
-                            <div class="col-4 bg-danger py-2" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
+                            <div class="col-md-4 col-sm-6 col-8 bg-danger py-2" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
                                 <img src="img/icon/indonesia.svg" class="d-inline-block mr-1" width="20px" alt="Indonesia_icon">
                                 <h6 class="d-inline text-white" style="position: relative; top: 2px;">Kalimantan</h6>
                             </div>
                         </div>
                         <div class="rounded shadow mb-3">
                             <div class="row text-center px-3 py-3">  
-                                <div class="col-4">
+                                <div class="col-md-4 col-sm-6 col-6">
                                     <p class="mb-0">Positif</p>
                                     <h3 class="myfont-arciform mb-0 text-danger">35.295</h3>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-md-4 col-sm-6 col-6">
                                     <p class="mb-0">Sembuh</p>
                                     <h3 class="myfont-arciform mb-0 text-danger">12.636</h3>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-md-4 col-sm-12 col-12 mt-sm-3 mt-3 mt-md-0">
                                     <p class="mb-0">Meninggal</p>
                                     <h3 class="myfont-arciform mb-0 text-danger">2.000</h3>
                                 </div>
@@ -237,22 +240,22 @@
                     </div>
                     <div class="px-3">
                         <div class="row text-center px-3">
-                            <div class="col-4 bg-danger py-2" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
+                            <div class="col-md-4 col-sm-6 col-8 bg-danger py-2" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
                                 <img src="img/icon/indonesia.svg" class="d-inline-block mr-1" width="20px" alt="Indonesia_icon">
                                 <h6 class="d-inline text-white" style="position: relative; top: 2px;">Sulawesi</h6>
                             </div>
                         </div>
                         <div class="rounded shadow mb-3">
                             <div class="row text-center px-3 py-3">  
-                                <div class="col-4">
+                                <div class="col-md-4 col-sm-6 col-6">
                                     <p class="mb-0">Positif</p>
                                     <h3 class="myfont-arciform mb-0 text-danger">35.295</h3>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-md-4 col-sm-6 col-6">
                                     <p class="mb-0">Sembuh</p>
                                     <h3 class="myfont-arciform mb-0 text-danger">12.636</h3>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-md-4 col-sm-12 col-12 mt-sm-3 mt-3 mt-md-0">
                                     <p class="mb-0">Meninggal</p>
                                     <h3 class="myfont-arciform mb-0 text-danger">2.000</h3>
                                 </div>
@@ -261,22 +264,22 @@
                     </div>
                     <div class="px-3">
                         <div class="row text-center px-3">
-                            <div class="col-4 bg-danger py-2" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
+                            <div class="col-md-4 col-sm-6 col-8 bg-danger py-2" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
                                 <img src="img/icon/indonesia.svg" class="d-inline-block mr-1" width="20px" alt="Indonesia_icon">
                                 <h6 class="d-inline text-white" style="position: relative; top: 2px;">Papua</h6>
                             </div>
                         </div>
                         <div class="rounded shadow mb-3">
                             <div class="row text-center px-3 py-3">  
-                                <div class="col-4">
+                                <div class="col-md-4 col-sm-6 col-6">
                                     <p class="mb-0">Positif</p>
                                     <h3 class="myfont-arciform mb-0 text-danger">35.295</h3>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-md-4 col-sm-6 col-6">
                                     <p class="mb-0">Sembuh</p>
                                     <h3 class="myfont-arciform mb-0 text-danger">12.636</h3>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-md-4 col-sm-12 col-12 mt-sm-3 mt-3 mt-md-0">
                                     <p class="mb-0">Meninggal</p>
                                     <h3 class="myfont-arciform mb-0 text-danger">2.000</h3>
                                 </div>
@@ -286,33 +289,49 @@
                 </div>
             </div>
             <div class="col-md-6 text-center my-2">
-                <div>
-                    <img src="img/map/indo_black.png" class="rounded w-100" alt="Indonesia-map_Covid">
+                <div class="map-indo position-relative text-center rounded">
+                    <div id="indo-map" class="d-inline-block">
+                        <div id="sumatra">
+                            <img id="sumatra-map" src="img/map/border/sumatra_black.png">
+                        </div>
+                        <div id="jawa">
+                            <img id="jawa-map" src="img/map/border/jawa_black.png">
+                        </div>
+                        <div id="kalimantan">
+                            <img id="kalimantan-map" src="img/map/border/kalimantan_black.png">
+                        </div>
+                        <div id="sulawesi">
+                            <img id="sulawesi-map" src="img/map/border/sulawesi_black.png">
+                        </div>
+                        <div id="irian">
+                            <img id="irian-map" src="img/map/border/irianjaya_black.png">
+                        </div>
+                    </div>
                 </div>
-                <div class="text-right mt-3">
-                    <a href="#sidescript_dev" class="btn btn-danger px-5 rounded-pill d-inline-block shadow-danger"><i class="fas fa-caret-right"></i> Selengkapnya</a>
+                <div class="text-right mt-3 mr-1 mr-sm-4">
+                    <a href="common/peta.html" class="btn btn-danger px-5 rounded-pill d-inline-block shadow-danger"><i class="fas fa-caret-right"></i> Selengkapnya</a>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="container-fluid bg-danger">
-        <div class="container py-4">
+        <div class="container py-0 py-md-4">
             <div class="row">
                 <div class="col-md-6 py-5">
                     <h2 class="text-white mb-0 myfont-arciform">Literasi informasi yang terpercaya, waspada informasi hoax</h2>
-                    <p class="text-white mt-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos pariatur facere animi ipsum incidunt iusto qui!</p>
+                    <p class="text-white mt-2 p-sm-justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos pariatur facere animi ipsum incidunt iusto qui!</p>
                 </div>
                 <div class="col-md-6 text-center">
-                    <img src="img/illust/articles.svg" class="w-75" alt="Online_Articles">
+                    <img src="img/illust/articles.svg" class="img-md-100" alt="Online_Articles">
                 </div>
             </div>
         </div>
     </div>
 
     <div class="container-fluid px-2">
-        <div class="container bg-white p-0 p-md-2 pt-3 px-2 px-md-3 rounded shadow" id="berita-id">
-            <div class="row mt-3 px-2">
+        <div class="container bg-white py-2 rounded shadow" id="berita-id">
+            <div class="row mt-3">
                 <div class="col-md-7">
                     <h3 class="ml-2 text-danger myfont-arciform mb-0">Berita covid terkini</h3>
                     <div class="news">
@@ -323,13 +342,13 @@
                                     <button class="btn btn-transparent mx-1 px-5 text-white rounded border-light"><i class="fas fa-share-alt"></i> Share</button>
                                 </div>
                                 <div class="card-body w-100 bg-white">
-                                    <h4 class="card-title mb-1">Banyak pasien sembuh di Wuhan</h4>
+                                    <h5 class="card-title mb-1">Banyak pasien sembuh di Wuhan</h5>
                                     <p class="responses">
                                         <span class="mr-3"><i class="text-danger fas fa-eye"></i> 1,4k</span>
                                         <span class="mr-3"><i class="text-danger fas fa-comments"></i> 520</span>
                                         <span><i class="text-danger fas fa-share-alt"></i> 120</span> 
-                                        <span class="mx-2">|</span>
-                                        <span>Wuhan, 20 Mei 2020</span>
+                                        <span class="mx-2 d-sm-none">|</span>
+                                        <span class="mt-1 mt-sm-0 d-inline-block"><i class="fas fa-info-circle mr-1 text-danger"></i> Wuhan, 20 Mei 2020</span>
                                     </p>
                                     <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, illum? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum, quisquam!...</p>
                                 </div>
@@ -342,13 +361,13 @@
                                     <button class="btn btn-transparent mx-1 px-5 text-white rounded border-light"><i class="fas fa-share-alt"></i> Share</button>
                                 </div>
                                 <div class="card-body w-100 bg-white">
-                                    <h4 class="card-title mb-1">Warga kebumen meninggal positif corona</h4>
+                                    <h5 class="card-title mb-1">Warga kebumen meninggal positif corona</h5>
                                     <p class="responses">
                                         <span class="mr-3"><i class="text-danger fas fa-eye"></i> 1,4k</span>
                                         <span class="mr-3"><i class="text-danger fas fa-comments"></i> 520</span>
                                         <span><i class="text-danger fas fa-share-alt"></i> 120</span> 
-                                        <span class="mx-2">|</span>
-                                        <span>Jakarta, 20 Juni 2020</span>
+                                        <span class="mx-2 d-sm-none">|</span>
+                                        <span class="mt-1 mt-sm-0 d-inline-block"><i class="fas fa-info-circle mr-1 text-danger"></i> Jakarta, 20 Juni 2020</span>
                                     </p>
                                     <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, illum? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum, quisquam!...</p>
                                 </div>
@@ -361,13 +380,13 @@
                                     <button class="btn btn-transparent mx-1 px-5 text-white rounded border-light"><i class="fas fa-share-alt"></i> Share</button>
                                 </div>
                                 <div class="card-body w-100 bg-white">
-                                    <h4 class="card-title mb-1">Presiden Jokowi umumkan 2 WNI positif corona</h4>
+                                    <h5 class="card-title mb-1">Presiden Jokowi umumkan 2 WNI positif corona</h5>
                                     <p class="responses">
                                         <span class="mr-3"><i class="text-danger fas fa-eye"></i> 1,4k</span>
                                         <span class="mr-3"><i class="text-danger fas fa-comments"></i> 520</span>
                                         <span><i class="text-danger fas fa-share-alt"></i> 120</span> 
-                                        <span class="mx-2">|</span>
-                                        <span>Jakarta, 20 Juni 2020</span>
+                                        <span class="mx-2 d-sm-none">|</span>
+                                        <span class="mt-1 mt-sm-0 d-inline-block"><i class="fas fa-info-circle mr-1 text-danger"></i> Jakarta, 20 Juni 2020</span>
                                     </p>
                                     <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, illum? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum, quisquam!...</p>
                                 </div>
@@ -377,7 +396,7 @@
                 </div>
                 <div class="col-md-5">
                     <h3 class="ml-2 text-danger myfont-arciform mb-0">Berita covid lain</h3>
-                    <div class="other-news my-3 px-3">
+                    <div class="other-news my-3 px-sm-3 px-0">
                         <div class="w-100 mb-2 news-other shadow-sm p-2 rounded">
                             <div class="row">
                                 <div class="col-3 m-0 px-1 pl-3">
@@ -386,7 +405,7 @@
                                     </div>
                                 </div>
                                 <div class="col-9 other-body m-0 px-1 pr-3">
-                                    <h6 class="mb-1">Indonesia waspada gelombang 2 corona tanpa gejala</h6>
+                                    <h6 class="mb-1">Waspada gelombang 2 corona tanpa gejala</h6>
                                     <p class="responses mb-0">
                                         <span>Jakarta, 20 Juni 2020</span>
                                     </p>
@@ -469,8 +488,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="text-right">
-                        <button class="btn btn-danger px-5 rounded-pill shadow-danger"><i class="fas fa-caret-right"></i> Selengkapnya</button>
+                    <div class="text-right mb-2">
+                        <a href="common/berita.html" class="btn btn-danger px-5 rounded-pill shadow-danger"><i class="fas fa-caret-right"></i> Selengkapnya</a>
                     </div>
                 </div>
             </div>
@@ -478,7 +497,7 @@
     </div>
 
     <div class="container-fluid bg-danger">
-        <div class="container py-4">
+        <div class="container py-4 d-md-inline-block d-none">
             <div class="row">
                 <div class="col-md-6 text-center">
                     <img src="img/illust/doctor.svg" class="w-75" alt="Doctor">
@@ -486,6 +505,17 @@
                 <div class="col-md-6 py-5">
                     <h2 class="text-white mb-0 myfont-arciform">Ayo hindari coronavirus dengan protokol kesehatan yang sesuai</h2>
                     <p class="text-white mt-2">Lorem ipsum dolor sit amet consectetur, Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur. adipisicing elit. Quos pariatur facere animi ipsum incidunt iusto qui!</p>
+                </div>
+            </div>
+        </div>
+        <div class="container py-4 d-md-none d-inline-block">
+            <div class="row">
+                <div class="col-md-6 py-5">
+                    <h2 class="text-white mb-0 myfont-arciform">Ayo hindari coronavirus dengan protokol kesehatan yang sesuai</h2>
+                    <p class="text-white mt-2">Lorem ipsum dolor sit amet consectetur, Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur. adipisicing elit. Quos pariatur facere animi ipsum incidunt iusto qui!</p>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="img/illust/doctor.svg" class="w-75" alt="Doctor">
                 </div>
             </div>
         </div>
@@ -609,7 +639,7 @@
                             </div>
                             <div class="text-center">
                                 <h5 class="mb-0">Febri Brilian Barkah</h5>
-                                <p>Backend Developer</p>
+                                <p>Data Analysis</p>
                             </div>
                         </div>
                         <div>
@@ -628,7 +658,7 @@
     </div>
 
     <footer class="footer-area footer--light">
-        <div class="footer-big">
+        <div class="footer-big py-2 py-sm-4">
             <div class="container">
                 <div class="row">
                     <div class="col-md-3 col-sm-12">
@@ -653,7 +683,7 @@
                     </div>
                     <div class="col-md-9">
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-4 col-sm-6 col-6">
                                 <div class="footer-widget">
                                     <div class="footer-menu footer-menu--1">
                                         <h4 class="footer-widget-title">Bantuan</h4>
@@ -669,7 +699,7 @@
                                     </div>
                                 </div>
                             </div>      
-                            <div class="col-md-4">
+                            <div class="col-md-4 col-sm-6 col-6">
                                 <div class="footer-widget">
                                     <div class="footer-menu">
                                         <h4 class="footer-widget-title">Informasi</h4>
@@ -680,9 +710,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4 col-sm-6 col-12 p-sm-center">
                                 <div class="footer-widget">
-                                    <div class="footer-menu no-padding">
+                                    <div class="footer-menu no-padding" id="nav-footer">
                                         <h4 class="footer-widget-title">Nav Footer</h4>
                                         <ul>
                                             <li><a href="#">Beranda</a></li>
@@ -697,14 +727,14 @@
                         </div>
                         <div class="row">
                             <div class="col-md-3 col-sm-6 col-6 text-center">
-                                <img src="img/playstore.png" class="w-100 mt-3 d-inline-block" alt="">
+                                <img src="img/playstore.png" class="w-100 mt-3 d-inline-block" alt="playstore">
                             </div>
                             <div class="col-md-3 col-sm-6 col-6 text-center">
-                                <img src="img/github.png" class="mt-1 w-100 d-inline-block" alt="">
+                                <img src="img/github.png" class="mt-1 w-100 d-inline-block" alt="github">
                             </div>
-                            <div class="col-md-6 col-sm-12">
+                            <div class="col-md-6 col-sm-12 pt-2 pt-md-0">
                                 <div class="footer-widget">
-                                    <div class="footer-menu no-padding">
+                                    <div class="footer-menu no-padding p-sm-center">
                                         <h4 class="footer-widget-title mb-0">Follow Us</h4>
                                         <p class="icons-social">
                                             <span class="ml-0"><a href="#"><i class="fab fa-instagram"></i></a></span>
@@ -728,19 +758,84 @@
                         <div class="copyright-text">
                             <p>© 2020
                                 <a href="#">COVid</a>. All rights reserved. Created by
-                                <a href="#">Sidescript.dev</a>
+                                <a href="#">Sidescript.dev <img src="img/team.png" alt="sidescript_logo" width="25px"></a>
                             </p>
                         </div>
-                        <div class="go_top bg-danger">
-                            <a href="#" class="text-white">
+                        <a href="#" class="text-white">
+                            <div class="go_top bg-danger">
                                 <i class="fas fa-arrow-up"></i>
-                            </a>
-                        </div>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
+
+<script>
+        // Animate
+        (function() {
+        var container = document.getElementById("jumbotron-p"),
+            inner = document.getElementById("jumbotron-id"),
+            helper = document.getElementById("helper"),
+            img1 = document.getElementById("img_lockdown-parallax");
+        var mouse = {
+            _x: 0,
+            _y: 0,
+            x: 0,
+            y: 0,
+        updatePosition: function(event) {
+            var e = event || window.event;
+            this.x = e.clientX - this._x;
+            this.y = (e.clientY - this._y) * -1;
+        },
+        setOrigin: function(e) {
+            this._x = e.offsetLeft + Math.floor(e.offsetWidth / 2);
+            this._y = e.offsetTop + Math.floor(e.offsetHeight / 2);
+        },
+        show: function() {
+            return "(" + this.x + ", " + this.y + ")";
+        }
+    };
+    mouse.setOrigin(container);
+    var counter = 0;
+    var updateRate = 1;
+    var isTimeToUpdate = function() {
+        return counter++ % updateRate === 0;
+    };
+    
+    var onMouseEnterHandler = function(event) {
+        helper.className = "";
+        update(event);
+    };
+    
+    var onMouseLeaveHandler = function() {
+        inner.style = "";
+        helper.className = "hidden";
+    };
+    var onMouseMoveHandler = function(event) {
+        if (isTimeToUpdate()) {
+            update(event);
+        }
+        displayMousePositionHelper(event);
+    };
+    var update = function(event) {
+        mouse.updatePosition(event);
+    };
+    
+    var displayMousePositionHelper = function(event) {
+        var e = event || window.event;
+        img1.style = "top:"+(e.clientY-container.offsetTop)/(-55)+"px !important;"
+                    + "left:"+(e.clientX-container.offsetLeft)/(-55)+"px !important;";
+    };
+    container.onmouseenter = onMouseEnterHandler;
+    container.onmouseleave = onMouseLeaveHandler;
+    container.onmousemove = onMouseMoveHandler;
+    })
+    ();
+    // End Animate
+
+</script>
 
 </body>
 </html>
