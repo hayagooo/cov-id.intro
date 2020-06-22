@@ -13,6 +13,9 @@ body {
     overflow-x: hidden !important;
 }
 /* font declaration */
+.dropdown-item.active, .dropdown-item:active {
+    background-color: #ee4141 !important;
+}
 .bg-black {
     background-color: black !important;
     color: white !important;
@@ -1103,7 +1106,7 @@ a:focus,a:hover {
     background-color: white !important;
 }
 .card-news {
-    height: 400px;
+    height: 450px;
     overflow: hidden;
     transition: all .3s;
 }
@@ -1127,6 +1130,12 @@ a:focus,a:hover {
     opacity: 0;
     transition: all .3s;
 }
+.card-head {
+    width: 100%;
+}
+.card-news, .card-other-news {
+    cursor: pointer;
+}
 .card-news .card-body .card-text {
     font-size: .8rem;
 }
@@ -1139,34 +1148,62 @@ a:focus,a:hover {
 .card-news img {
     transition: all .3s;
 }
-.card-news .tools {
-    transition: all .3s;
-    position: relative;
-    top: 120px;
+.card-other-news .tools {
+    top: 90px !important;
 }
 .card-news .card-head img {
     transition: all .3s;
 }
+.card-other-news .card-head:hover img,
 .card-news .card-head:hover img {
     transition: all .3s;
     opacity: .5;
     transform: scale(1.1);
 }
+.card-news-list .card-head:hover img {
+    height: 100% !important;
+    transition: all .3s;
+    opacity: .5;
+    transform: scale(1.1);
+    width: auto !important;
+}
+@media screen and (max-width: 680px) {
+    .card-news-list .card-head:hover img {
+        width: 100% !important;
+        transition: all .3s;
+        opacity: .5;
+        transform: scale(1.7);
+    }
+}
+.card-other-news .card-head .tools-news,
 .card-news .card-head .tools-news {
     transition: all .3s;
     top: -100px;
     opacity: 0;
 }
+.card-other-news .card-head:hover .tools-news,
 .card-news .card-head:hover .tools-news {
     transition: all .3s;
     opacity: 1;
-    top: 120px !important;
+    top: 160px !important;
     animation: bounce;
     animation-duration: 1s;
 }
-.card-news .card-head .tools-news:hover button {
+.card-other-news .card-head:hover ~ .card-body {
+    bottom: -100px;
+    opacity: 0;
+}
+.card-other-news .card-head:hover .tools-news {
+    top: 90px !important;
+}
+.card-other-news .card-head .tools-news button:hover,
+.card-news .card-head .tools-news button:hover {
     background-color: white;
     color: black !important;
+}
+.card-other-news .card-head .tools-news button:hover svg,
+.card-news .card-head .tools-news button:hover svg {
+    color: #ee4141 !important;
 }
 .search-news {
     right: 0px;
@@ -1191,15 +1228,78 @@ a:focus,a:hover {
 }
 .card-other-news {
     position: relative;
-    height: 200px;
+    height: 221px;
     overflow: hidden;
+    transition: all .3s;
+}
+.card-other-news:hover {
+    box-shadow: 0px .5rem 1rem rgba(0, 0, 0, .1) !important;
 }
 .card-other-news .card-body {
     position: absolute;
     bottom: 0;
+    opacity: 1;
     width: 100%;
+    transition: all .3s;
     left: 0;
 }
+.card-other-news .card-body .card-text {
+    font-size: .8rem;
+    position: absolute;
+    bottom: -100px;
+    opacity: 0;
+    transition: all .3s;
+}
+.card-other-news .card-body:hover .card-text {
+    position: relative;
+    bottom: 0px;
+    opacity: 1;
+    transition: all .3s;
+}
+.card-other-news .card-body .responses {
+    font-size: .75rem;
+}
 /* end beritap page declaration */
+/* end news detail declaration */
 
+#cover-news {
+    height: 400px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    left: 0;
+    border-radius: 20px;
+    top: 0;
+    position: relative;
+}
+.icons-news { 
+    position: sticky !important;
+    top: 100px;
+}
+#widget-news {
+    width: 60px;
+}
+.widget-menu {
+    display: block;
+}
+#widget-fix {
+    position: fixed;
+    top: 150px;
+}
+@media screen and (max-width: 767px) {
+    #widget-news {
+        width: 200px;
+    }
+    .widget-menu {
+        display: inline-block;
+    }
+    #widget-fix {
+        position: fixed;
+        bottom: 20px;
+        text-align: right !important;
+        top: auto;
+        left: 20px;
+    }
+}
+/* news detail declaration */
 /* end other page */

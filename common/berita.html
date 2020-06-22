@@ -76,7 +76,7 @@
         <div class="container pt-4 mt-5">
             <div class="row">
                 <div class="col-md-12">
-                    <nav id="navbar-news" class="navbar-expand-sm position-relative navbar-light py-3 pb-3 px-md-0 px-2 bg-white border-bottom">
+                    <nav id="navbar-news" class="navbar-expand-lg position-relative navbar-light py-3 pb-3 px-md-0 px-2 bg-white border-bottom">
                         <button class="navbar-toggler mt-1 d-lg-none border-0" style="z-index: 20;" type="button" data-toggle="collapse" data-target="#news-navbar" aria-controls="collapsibleNavId"
                             aria-expanded="false" aria-label="Toggle navigation">
                             <i class="fas fa-ellipsis-v"></i>
@@ -107,7 +107,7 @@
                         <div class="position-absolute search-news">
                             <div class="form-group">
                                 <div class="input-group">
-                                    <input type="text" name="key" id="key" class="form-control w-100" placeholder="Cari berita" aria-describedby="helpId">
+                                    <input type="text" name="key" id="key" class="form-control" placeholder="Cari berita" aria-describedby="helpId">
                                     <div class="input-group-append">
                                         <span class="input-group-text bg-danger text-white border-0"><i class="fas fa-search"></i></span>
                                     </div>
@@ -121,14 +121,24 @@
         <script>
             $(document).ready(function() {
                 let windowSize = $(window).width();
-                $(window).scroll(function() {
-                    let top = window.pageYOffset || document.documentElement.scrollTop;
-                    if(top >= 90) {
-                        $('#navbar-news').addClass('navbar-news-fix shadow-sm animate__animated animate__bounceInDown border-bottom-0').removeClass('border-bottom');
+                let top_static = window.pageYOffset || document.documentElement.scrollTop;
+                    if(top_static >= 90) {
+                        $('#navbar-news').addClass('navbar-news-fix shadow-sm animate__animated animate__slideInDown border-bottom-0').removeClass('border-bottom');
                         $('.search-news').addClass('pr-3');
                         $('#first-news').addClass('ml-3');
                     } else {
-                        $('#navbar-news').removeClass('navbar-news-fix shadow-sm animate__animated animate__bounceInDown border-bottom-0').addClass('border-bottom');
+                        $('#navbar-news').removeClass('navbar-news-fix shadow-sm animate__animated animate__slideInDown border-bottom-0').addClass('border-bottom');
+                        $('.search-news').removeClass('pr-3');
+                        $('#first-news').removeClass('ml-3');
+                    }
+                $(window).scroll(function() {
+                    let top = window.pageYOffset || document.documentElement.scrollTop;
+                    if(top >= 90) {
+                        $('#navbar-news').addClass('navbar-news-fix shadow-sm animate__animated animate__slideInDown border-bottom-0').removeClass('border-bottom');
+                        $('.search-news').addClass('pr-3');
+                        $('#first-news').addClass('ml-3');
+                    } else {
+                        $('#navbar-news').removeClass('navbar-news-fix shadow-sm animate__animated animate__slideInDown border-bottom-0').addClass('border-bottom');
                         $('.search-news').removeClass('pr-3');
                         $('#first-news').removeClass('ml-3');
                     }
@@ -136,72 +146,247 @@
             });
         </script>
         <div class="container bg-white rounded position-relative mt-3">
+            <h3 class="ml-2 text-danger myfont-arciform">Berita covid terkini</h3>
             <div class="row">
-                <div class="col-md-7">
-                    <h3 class="ml-2 text-danger myfont-arciform">Berita covid terkini</h3>
-                    <div class="news">
-                        <div>
-                            <div class="card bg-dark border-0 shadow-sm card-berita position-relative">
-                                <img class="h-100 position-absolute" src="../img/covid.jpg" alt="berita-covid">
-                                <div class="position-relative tools text-center w-100 tools-hide">
-                                    <button class="btn btn-transparent mx-1 px-5 text-white rounded border-light"><i class="fas fa-share-alt"></i> Share</button>
-                                </div>
-                                <div class="card-body w-100 bg-white">
-                                    <h5 class="card-title mb-1">Banyak pasien sembuh di Wuhan</h5>
-                                    <p class="responses">
-                                        <span class="mr-3"><i class="text-danger fas fa-eye"></i> 1,4k</span>
-                                        <span class="mr-3"><i class="text-danger fas fa-comments"></i> 520</span>
-                                        <span><i class="text-danger fas fa-share-alt"></i> 120</span> 
-                                        <span class="mx-2 d-sm-none">|</span>
-                                        <span class="mt-1 mt-sm-0 d-inline-block"><i class="fas fa-info-circle mr-1 text-danger"></i> Wuhan, 20 Mei 2020</span>
-                                    </p>
-                                    <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, illum? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum, quisquam!...</p>
-                                </div>
+                <div class="col-md-7 px-md-1 px-2">
+                    <div class="card bg-dark border-0 shadow-sm mb-2 card-news position-relative">
+                        <div class="card-head">
+                            <img class="h-100 position-absolute" src="../img/news/cov-id-jatim.jpg" alt="berita-covid">
+                            <div class="position-relative text-center w-100 tools-news">
+                                <div class="btn-group">
+                                    <button class="btn btn-transparent px-md-3 px-2 text-white border-light btn-sm"><i class="fas fa-share-alt"></i> Bagikan</button>
+                                    <button class="link-detail btn btn-transparent px-md-3 px-2 text-white border-light btn-sm"><i class="fas fa-eye"></i> Lihat</button>
+                                </div>    
                             </div>
                         </div>
-                        <div>
-                            <div class="card bg-dark border-0 shadow-sm card-berita position-relative">
-                                <img class="h-100 position-absolute" src="../img/news/warga_kebumen.jpg" alt="berita-covid">
-                                <div class="position-relative tools text-center w-100 tools-hide">
-                                    <button class="btn btn-transparent mx-1 px-5 text-white rounded border-light"><i class="fas fa-share-alt"></i> Share</button>
-                                </div>
-                                <div class="card-body w-100 bg-white">
-                                    <h5 class="card-title mb-1">Warga kebumen meninggal positif corona</h5>
-                                    <p class="responses">
-                                        <span class="mr-3"><i class="text-danger fas fa-eye"></i> 1,4k</span>
-                                        <span class="mr-3"><i class="text-danger fas fa-comments"></i> 520</span>
-                                        <span><i class="text-danger fas fa-share-alt"></i> 120</span> 
-                                        <span class="mx-2 d-sm-none">|</span>
-                                        <span class="mt-1 mt-sm-0 d-inline-block"><i class="fas fa-info-circle mr-1 text-danger"></i> Jakarta, 20 Juni 2020</span>
-                                    </p>
-                                    <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, illum? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum, quisquam!...</p>
-                                </div>
+                        <div class="card-body w-100 bg-white">
+                            <h5 class="card-title mb-2">Tembus 8.053 Kasus Positif Covid-19 di Jatim, Gugus Tugas: Tidak Masalah Angkanya Tinggi</h5>
+                            <p class="responses mb-0">
+                                <span class="mr-3"><i class="text-danger fas fa-eye"></i> 1,4k</span>
+                                <span class="mr-3"><i class="text-danger fas fa-comments"></i> 520</span>
+                                <span><i class="text-danger fas fa-share-alt"></i> 120</span> 
+                                <span class="mx-2 d-sm-none">|</span>
+                                <span class="mt-1 mt-sm-0 d-inline-block"><i class="fas fa-info-circle mr-1 text-danger"></i> Surabaya, 20 Mei 2020</span>
+                            </p>
+                            <p class="card-text mb-0 mt-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, illum? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum, quisquam!...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 px-md-1 px-2">
+                    <div class="card card-other-news bg-dark position-relative shadow-sm border-0">
+                        <div class="card-head">
+                            <img class="card-img-top position-absolute w-100" src="../img/news/2_wni.jpg" alt="berita-covid">
+                            <div class="position-relative text-center w-100 tools-news">
+                                <div class="btn-group">
+                                    <button class="btn btn-transparent px-md-3 px-2 text-white border-light btn-sm"><i class="fas fa-share-alt"></i> Bagikan</button>
+                                    <button class="link-detail btn btn-transparent px-md-3 px-2 text-white border-light btn-sm"><i class="fas fa-eye"></i> Lihat</button>
+                                </div>    
                             </div>
                         </div>
-                        <div>
-                            <div class="card bg-dark border-0 shadow-sm card-berita position-relative">
-                                <img class="h-100 position-absolute" src="../img/news/2_wni.jpg" alt="berita-covid">
-                                <div class="position-relative tools text-center w-100 tools-hide">
-                                    <button class="btn btn-transparent mx-1 px-5 text-white rounded border-light"><i class="fas fa-share-alt"></i> Share</button>
-                                </div>
-                                <div class="card-body w-100 bg-white">
-                                    <h5 class="card-title mb-1">Presiden Jokowi umumkan 2 WNI positif corona</h5>
-                                    <p class="responses">
-                                        <span class="mr-3"><i class="text-danger fas fa-eye"></i> 1,4k</span>
-                                        <span class="mr-3"><i class="text-danger fas fa-comments"></i> 520</span>
-                                        <span><i class="text-danger fas fa-share-alt"></i> 120</span> 
-                                        <span class="mx-2 d-sm-none">|</span>
-                                        <span class="mt-1 mt-sm-0 d-inline-block"><i class="fas fa-info-circle mr-1 text-danger"></i> Jakarta, 20 Juni 2020</span>
-                                    </p>
-                                    <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, illum? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum, quisquam!...</p>
-                                </div>
+                        <div class="card-body bg-white">
+                            <h6 class="card-title mb-2">Presiden umumkan 2 WNI Positif corona</h6>
+                            <p class="responses mb-0">
+                                <span class="mr-3"><i class="text-danger fas fa-eye"></i> 1,4k</span>
+                                <span class="mr-3"><i class="text-danger fas fa-comments"></i> 520</span>
+                                <span><i class="text-danger fas fa-share-alt"></i> 120</span> 
+                                <span class="mx-2 d-sm-none">|</span>
+                                <span class="mt-1 mt-sm-0 d-inline-block"><i class="fas fa-info-circle mr-1 text-danger"></i> Jakarta, 20 Mei 2020</span>
+                            </p>
+                            <p class="card-text mb-0 mt-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae, autem eligendi eveniet eum sunt nam.</p>
+                        </div>
+                    </div>
+                    <div class="card card-other-news bg-dark position-relative mt-2 shadow-sm border-0">
+                        <div class="card-head">
+                            <img class="card-img-top position-absolute w-100" src="../img/news/1pasien meninggal.jpg" alt="berita-covid">
+                            <div class="position-relative text-center w-100 tools-news">
+                                <div class="btn-group">
+                                    <button class="btn btn-transparent px-md-3 px-2 text-white border-light btn-sm"><i class="fas fa-share-alt"></i> Bagikan</button>
+                                    <button class="link-detail btn btn-transparent px-md-3 px-2 text-white border-light btn-sm"><i class="fas fa-eye"></i> Lihat</button>
+                                </div>    
                             </div>
+                        </div>
+                        <div class="card-body bg-white">
+                            <h6 class="card-title mb-2">Indonesia corona 1 orang positif</h6>
+                            <p class="responses mb-0">
+                                <span class="mr-3"><i class="text-danger fas fa-eye"></i> 1,4k</span>
+                                <span class="mr-3"><i class="text-danger fas fa-comments"></i> 520</span>
+                                <span><i class="text-danger fas fa-share-alt"></i> 120</span> 
+                                <span class="mx-2 d-sm-none">|</span>
+                                <span class="mt-1 mt-sm-0 d-inline-block"><i class="fas fa-info-circle mr-1 text-danger"></i> Jakarta, 20 Mei 2020</span>
+                            </p>
+                            <p class="card-text mb-0 mt-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae, autem eligendi eveniet eum sunt nam.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-12">
+                    <div class="card card-other-news card-news-list bg-dark position-relative mt-2 shadow-sm my-3 border-0">
+                        <div class="card-head">
+                            <img class="card-img-top position-absolute w-100" src="../img/news/13_orang_positif.jpg" alt="berita-covid">
+                            <div class="position-relative text-center w-100 tools-news">
+                                <div class="btn-group">
+                                    <button class="btn btn-transparent px-md-3 px-2 text-white border-light btn-sm"><i class="fas fa-share-alt"></i> Bagikan</button>
+                                    <button class="link-detail btn btn-transparent px-md-3 px-2 text-white border-light btn-sm"><i class="fas fa-eye"></i> Lihat</button>
+                                </div>    
+                            </div>
+                        </div>
+                        <div class="card-body bg-white">
+                            <h6 class="card-title mb-2">13 Orang baru positif corona</h6>
+                            <p class="responses mb-0" style="font-size: .7rem;">
+                                <span class="d-md-inline-block d-sm-none d-none mr-2"><i class="text-danger fas fa-eye"></i> 1,4k</span>
+                                <span class="d-md-inline-block d-sm-none d-none mr-2"><i class="text-danger fas fa-comments"></i> 520</span>
+                                <span class="d-md-inline-block d-sm-none d-none"><i class="text-danger fas fa-share-alt"></i> 120</span> 
+                                <span class="mx-2 d-md-inline-block d-sm-none d-none">|</span>
+                                <span class="mt-1 mt-sm-0 d-inline-block"><i class="fas fa-info-circle mr-1 text-danger"></i> Jakarta, 20 Mei 2020</span>
+                            </p>
+                            <p class="card-text mb-0 mt-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae, autem eligendi eveniet eum sunt nam.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-12">
+                    <div class="card card-other-news card-news-list bg-dark position-relative mt-2 shadow-sm my-3 border-0">
+                        <div class="card-head">
+                            <img class="card-img-top position-absolute w-100" src="../img/news/masa_puncak.jpeg" alt="berita-covid">
+                            <div class="position-relative text-center w-100 tools-news">
+                                <div class="btn-group">
+                                    <button class="btn btn-transparent px-md-3 px-2 text-white border-light btn-sm"><i class="fas fa-share-alt"></i> Bagikan</button>
+                                    <button class="link-detail btn btn-transparent px-md-3 px-2 text-white border-light btn-sm"><i class="fas fa-eye"></i> Lihat</button>
+                                </div>    
+                            </div>
+                        </div>
+                        <div class="card-body bg-white">
+                            <h6 class="card-title mb-2">Prediksi masa puncak corona indonesia</h6>
+                            <p class="responses mb-0" style="font-size: .7rem;">
+                                <span class="d-md-inline-block d-sm-none d-none mr-2"><i class="text-danger fas fa-eye"></i> 1,4k</span>
+                                <span class="d-md-inline-block d-sm-none d-none mr-2"><i class="text-danger fas fa-comments"></i> 520</span>
+                                <span class="d-md-inline-block d-sm-none d-none"><i class="text-danger fas fa-share-alt"></i> 120</span> 
+                                <span class="mx-2 d-md-inline-block d-sm-none d-none">|</span>
+                                <span class="mt-1 mt-sm-0 d-inline-block"><i class="fas fa-info-circle mr-1 text-danger"></i> Jakarta, 20 Mei 2020</span>
+                            </p>
+                            <p class="card-text mb-0 mt-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae, autem eligendi eveniet eum sunt nam.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-12">
+                    <div class="card card-other-news card-news-list bg-dark position-relative mt-2 shadow-sm my-3 border-0">
+                        <div class="card-head">
+                            <img class="card-img-top position-absolute w-100" src="../img/news/warga_natuna.jpg" alt="berita-covid">
+                            <div class="position-relative text-center w-100 tools-news">
+                                <div class="btn-group">
+                                    <button class="btn btn-transparent px-md-3 px-2 text-white border-light btn-sm"><i class="fas fa-share-alt"></i> Bagikan</button>
+                                    <button class="link-detail btn btn-transparent px-md-3 px-2 text-white border-light btn-sm"><i class="fas fa-eye"></i> Lihat</button>
+                                </div>    
+                            </div>
+                        </div>
+                        <div class="card-body bg-white">
+                            <h6 class="card-title mb-2">Penolakan warga natuna soal karantina WNI</h6>
+                            <p class="responses mb-0" style="font-size: .7rem;">
+                                <span class="d-md-inline-block d-sm-none d-none mr-2"><i class="text-danger fas fa-eye"></i> 1,4k</span>
+                                <span class="d-md-inline-block d-sm-none d-none mr-2"><i class="text-danger fas fa-comments"></i> 520</span>
+                                <span class="d-md-inline-block d-sm-none d-none"><i class="text-danger fas fa-share-alt"></i> 120</span> 
+                                <span class="mx-2 d-md-inline-block d-sm-none d-none">|</span>
+                                <span class="mt-1 mt-sm-0 d-inline-block"><i class="fas fa-info-circle mr-1 text-danger"></i> Jakarta, 20 Mei 2020</span>
+                            </p>
+                            <p class="card-text mb-0 mt-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae, autem eligendi eveniet eum sunt nam.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-12">
+                    <div class="card card-other-news card-news-list bg-dark position-relative mt-2 shadow-sm my-3 border-0">
+                        <div class="card-head">
+                            <img class="card-img-top position-absolute w-100" src="../img/news/96_pasien.jpg" alt="berita-covid">
+                            <div class="position-relative text-center w-100 tools-news">
+                                <div class="btn-group">
+                                    <button class="btn btn-transparent px-md-3 px-2 text-white border-light btn-sm"><i class="fas fa-share-alt"></i> Bagikan</button>
+                                    <button class="link-detail btn btn-transparent px-md-3 px-2 text-white border-light btn-sm"><i class="fas fa-eye"></i> Lihat</button>
+                                </div>    
+                            </div>
+                        </div>
+                        <div class="card-body bg-white">
+                            <h6 class="card-title mb-2">Bertambah lagi positif corona 96 pasien</h6>
+                            <p class="responses mb-0" style="font-size: .7rem;">
+                                <span class="d-md-inline-block d-sm-none d-none mr-2"><i class="text-danger fas fa-eye"></i> 1,4k</span>
+                                <span class="d-md-inline-block d-sm-none d-none mr-2"><i class="text-danger fas fa-comments"></i> 520</span>
+                                <span class="d-md-inline-block d-sm-none d-none"><i class="text-danger fas fa-share-alt"></i> 120</span> 
+                                <span class="mx-2 d-md-inline-block d-sm-none d-none">|</span>
+                                <span class="mt-1 mt-sm-0 d-inline-block"><i class="fas fa-info-circle mr-1 text-danger"></i> Jakarta, 20 Mei 2020</span>
+                            </p>
+                            <p class="card-text mb-0 mt-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae, autem eligendi eveniet eum sunt nam.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-12">
+                    <div class="card card-other-news card-news-list bg-dark position-relative mt-2 shadow-sm my-3 border-0">
+                        <div class="card-head">
+                            <img class="card-img-top position-absolute w-100" src="../img/news/gelombang_2.jpg" alt="berita-covid">
+                            <div class="position-relative text-center w-100 tools-news">
+                                <div class="btn-group">
+                                    <button class="btn btn-transparent px-md-3 px-2 text-white border-light btn-sm"><i class="fas fa-share-alt"></i> Bagikan</button>
+                                    <button class="link-detail btn btn-transparent px-md-3 px-2 text-white border-light btn-sm"><i class="fas fa-eye"></i> Lihat</button>
+                                </div>    
+                            </div>
+                        </div>
+                        <div class="card-body bg-white">
+                            <h6 class="card-title mb-2">Waspada gelombang 2 corona tanpa gejala</h6>
+                            <p class="responses mb-0" style="font-size: .7rem;">
+                                <span class="d-md-inline-block d-sm-none d-none mr-2"><i class="text-danger fas fa-eye"></i> 1,4k</span>
+                                <span class="d-md-inline-block d-sm-none d-none mr-2"><i class="text-danger fas fa-comments"></i> 520</span>
+                                <span class="d-md-inline-block d-sm-none d-none"><i class="text-danger fas fa-share-alt"></i> 120</span> 
+                                <span class="mx-2 d-md-inline-block d-sm-none d-none">|</span>
+                                <span class="mt-1 mt-sm-0 d-inline-block"><i class="fas fa-info-circle mr-1 text-danger"></i> Jakarta, 20 Mei 2020</span>
+                            </p>
+                            <p class="card-text mb-0 mt-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae, autem eligendi eveniet eum sunt nam.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-12">
+                    <div class="card card-other-news card-news-list bg-dark position-relative mt-2 shadow-sm my-3 border-0">
+                        <div class="card-head">
+                            <img class="card-img-top position-absolute w-100" src="../img/news/warga_kebumen.jpg" alt="berita-covid">
+                            <div class="position-relative text-center w-100 tools-news">
+                                <div class="btn-group">
+                                    <button class="btn btn-transparent px-md-3 px-2 text-white border-light btn-sm"><i class="fas fa-share-alt"></i> Bagikan</button>
+                                    <button class="link-detail btn btn-transparent px-md-3 px-2 text-white border-light btn-sm"><i class="fas fa-eye"></i> Lihat</button>
+                                </div>    
+                            </div>
+                        </div>
+                        <div class="card-body bg-white">
+                            <h6 class="card-title mb-2">Warga kebumen meinggal positif corona</h6>
+                            <p class="responses mb-0" style="font-size: .7rem;">
+                                <span class="d-md-inline-block d-sm-none d-none mr-2"><i class="text-danger fas fa-eye"></i> 1,4k</span>
+                                <span class="d-md-inline-block d-sm-none d-none mr-2"><i class="text-danger fas fa-comments"></i> 520</span>
+                                <span class="d-md-inline-block d-sm-none d-none"><i class="text-danger fas fa-share-alt"></i> 120</span> 
+                                <span class="mx-2 d-md-inline-block d-sm-none d-none">|</span>
+                                <span class="mt-1 mt-sm-0 d-inline-block"><i class="fas fa-info-circle mr-1 text-danger"></i> Jakarta, 20 Mei 2020</span>
+                            </p>
+                            <p class="card-text mb-0 mt-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae, autem eligendi eveniet eum sunt nam.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-right">
+                <div class="btn-group rounded-pill">
+                    <button class="btn btn-danger"><i class="fas fa-caret-left"></i></button>
+                    <button class="btn btn-danger">1</button>
+                    <button class="btn btn-danger">2</button>
+                    <button class="btn btn-danger">3</button>
+                    <button class="btn btn-danger"><i class="fas fa-caret-right"></i></button>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <script>
+        $(document).ready(function() {
+            $('.link-detail, .card-news, .card-other-news').click(function() {
+                window.location.href = '../common/news.html';
+            });
+        });
+    </script>
 
     <footer class="footer-area footer--light">
         <div class="footer-big py-2 py-sm-4">
@@ -229,7 +414,7 @@
                     </div>
                     <div class="col-md-9">
                         <div class="row">
-                            <div class="col-md-4 col-sm-6 col-6">
+                            <div class="col-md-4 col-sm-6 col-12 col-sm-6 col-6">
                                 <div class="footer-widget">
                                     <div class="footer-menu footer-menu--1">
                                         <h4 class="footer-widget-title">Bantuan</h4>
@@ -245,7 +430,7 @@
                                     </div>
                                 </div>
                             </div>      
-                            <div class="col-md-4 col-sm-6 col-6">
+                            <div class="col-md-4 col-sm-6 col-12 col-sm-6 col-6">
                                 <div class="footer-widget">
                                     <div class="footer-menu">
                                         <h4 class="footer-widget-title">Informasi</h4>
@@ -256,7 +441,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4 col-sm-6 col-12 p-sm-center">
+                            <div class="col-md-4 col-sm-6 col-12 col-sm-6 col-12 p-sm-center">
                                 <div class="footer-widget">
                                     <div class="footer-menu no-padding" id="nav-footer">
                                         <h4 class="footer-widget-title">Nav Footer</h4>
