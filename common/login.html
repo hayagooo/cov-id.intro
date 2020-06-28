@@ -42,9 +42,9 @@
                 <p class="m-0 d-inline position-relative title_show" id="title_nav">COVid</p>
             </a>
             <div class="btn-group btn-menu-nav position-relative">
-                <button class="border-0 bg-white d-md-none position-relative search-toggle px-2">
+                <!-- <button class="border-0 bg-white d-md-none position-relative search-toggle px-2">
                     <i class="fas fa-search"></i>
-                </button>
+                </button> -->
                 <button class="bg-white border-0 d-md-none" type="button" id="toggler-nav" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <div class="burger-nav text-right">
@@ -69,24 +69,21 @@
                         <a class="nav-link" href="../index.html">BERANDA</a>
                     </li>
                     <li class="nav-item position-relative menu-item">
-                        <a class="nav-link" href="#peta-id">PETA</a>
+                        <a class="nav-link" href="peta.html">PETA</a>
                     </li>
                     <li class="nav-item position-relative menu-item">
-                        <a class="nav-link" href="#berita-id">BERITA</a>
+                        <a class="nav-link" href="berita.html">BERITA</a>
                     </li>
                     <li class="nav-item position-relative menu-item">
                         <a class="nav-link" href="#pencegahan-id">PENCEGAHAN</a>
                     </li>
                     <li class="nav-item position-relative menu-item">
-                        <a class="nav-link" href="#toko-id">TOKO</a>
-                    </li>
-                    <li class="nav-item border-0 pt-2 position-relative search-toggle search-lg-toggle px-2">
-                        <i class="fas fa-search"></i>
+                        <a class="nav-link" href="shop.html">TOKO</a>
                     </li>
                 </ul>
             </div>
         </nav>
-        <div class="bg-danger search-small-nav">
+        <!-- <div class="bg-danger search-small-nav">
             <div class="container">
                 <div class="row px-md-0 px-3">
                     <div class="col-md-6 offset-md-3  position-relative form-search-top">
@@ -103,38 +100,81 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </header>
 
-    <!-- <img src="img/lockdown.jpg" class="w-100 position-absolute" id="img_lockdown-parallax" alt=""> -->
-    <div style="background-image: url('../img/wallpaper/6ad58344d5274e8a1c41f20ea44a9d90.jpg');" class="position-relative">
+    <div class="container-fluid py-5 login-page position-relative">
         <div class="overlay-black"></div>
-        <div class="container" style="padding-top:10%; padding-bottom: 16%;">
-            <div class="row">
-                <div class="col-md-4 col-sm-12">
-                </div>
-                <div class="col-md-4 col-sm-12" style="border: 2px solid white; border-radius: 3%; background-color: white;">
-                    <div style="margin-top: 10%; margin-bottom: 10%;">
-                        <center><h3 style="color: #ee4141;">Login</h3></center>
-                        <div class="container">
-                            <form action="">
-                                <div class="form-group" style="margin-top: 20%;">
-                                    <input type="email" class="form-control" id="#" aria-describedby="emailHelp" style="border-top: none; border-right: none;" placeholder="Email">
+        <div class="container">
+            <div class="row py-5">
+                <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 my-5">
+                    <div class="w-100 bg-white rounded p-3 px-4 text-center">
+                        <img src="../img/favicon.png" width="40px" alt="logo_covid"> 
+                        <h5 class="myfont-arciform mb-0 clr-red">
+                            <span class="pt-2">Login</span>
+                        </h5>
+                        <div class="text-left">
+                            <form method="POST">
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" required name="email" id="email" class="form-control" placeholder="example@domain.com" aria-describedby="help-email">
+                                    <small id="help-email" class="text-muted d-none">Input required</small>
                                 </div>
-                                <div class="form-group" style="margin-top: 8%;">
-                                    <input type="password" class="form-control" id="#" style="border-top: none; border-right: none;" placeholder="Password">
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <div class="input-group">
+                                        <input type="password" required name="password" id="password" class="form-control border-right-0" aria-describedby="help-email">
+                                        <div class="input-group-append bg-white border-left-0" id="password-toggle">
+                                            <span class="input-group-text bg-white">
+                                                <i class="fas fa-eye" id="password-toggle-icon"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <small id="help-email" class="text-muted d-none">Input required</small>
                                 </div>
-                                <center>
-                                <button type="submit" class="btn w-75" style="background-color: #ee4141 ;margin-top: 10%; color: white;">Masuk</button>
-                                <a href="register.html"><button type="button" class="btn w-75" style="background-color: limegreen ;margin-top: 1%; color: white;">Register</button></a>
-                                </center>
+                                <div class="form-group">
+                                  <input type="checkbox" name="remember" id="remember">
+                                  <label for="remember">Remember me</label>
+                                </div>
+                                <button type="submit" class="btn btn-danger shadow-danger rounded-pill w-100 mb-3">Masuk</button>
+                                <button type="button" class="btn btn-white border border-light rounded-pill w-100" id="btn-google">
+                                    <img src="../img/icon/google.png" width="20px" alt="google" class="mr-2"> <span class="position-relative" style="top: 1px;">Login dengan google</span></button>
                             </form>
+                            <hr>
+                            <a href="register.html" role="button" class="btn btn-white bg-white border border-light rounded-pill w-100" id="btn-daftar">Daftar</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#btn-daftar').mouseenter(function() {
+                $(this).addClass('btn-light').removeClass('btn-white bg-white')
+            });
+            $('#btn-daftar').mouseleave(function() { 
+                $(this).addClass('btn-white bg-white').removeClass('btn-light')
+            });
+            $('#btn-google').mouseenter(function() {
+                $(this).addClass('btn-light').removeClass('btn-white bg-white')
+            });
+            $('#btn-google').mouseleave(function() { 
+                $(this).addClass('btn-white bg-white').removeClass('btn-light')
+            });
+            $('#password-toggle').click(function() {
+                var password = document.getElementById('password')
+                if(password.type == "password") {
+                    password.type = "text"
+                    $('#password-toggle-icon').addClass('text-primary')
+                } else {
+                    password.type = "password"
+                    $('#password-toggle-icon').removeClass('text-primary')
+                }
+            })
+        });
+    </script>
 
     <footer class="footer-area footer--light">
         <div class="footer-big py-2 py-sm-4">

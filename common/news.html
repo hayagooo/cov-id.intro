@@ -19,6 +19,7 @@
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/> -->
     <!-- Include Js file -->
     <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/popper.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/bootstrap.js"></script>
     <script src="../js/Chart.min.js"></script>
@@ -29,6 +30,12 @@
     <script src="../js/aos.js"></script>
     <script src="../js/script.js"></script>
     <script src="../js/navbar-black.js"></script>
+
+    <style>
+        .dropdown-toggle::after {
+            display: none;
+        }
+    </style>
 
 </head>
 <body>
@@ -75,13 +82,13 @@
                         <a class="nav-link" href="#pencegahan-id">PENCEGAHAN</a>
                     </li>
                     <li class="nav-item position-relative menu-item">
-                        <a class="nav-link" href="#toko-id">TOKO</a>
+                        <a class="nav-link" href="shop.html">TOKO</a>
                     </li>
                     <li class="nav-item border-0 pt-2 position-relative search-toggle search-lg-toggle px-2">
-                        <i class="fas fa-search"></i>
+                        <i class="fas fa-search" style="color: black;"></i>
                     </li>
                     <li class="nav-item position-relative ml-md-2">
-                        <a class="btn btn-danger rounded-pill shadow-danger text-light px-4 btn-sm mt-1" href="#" role="button" id="btn-login">
+                        <a class="btn btn-danger rounded-pill shadow-danger text-light px-4 btn-sm mt-1" href="login.html" role="button" id="btn-login">
                             <i class="fas fa-user"></i> Login
                         </a>
                     </li>
@@ -108,9 +115,9 @@
         </div>
     </header>
 
-    <div class="container-fluid py-5 overflow-hidden">
+    <div class="container-fluid pt-5 overflow-hidden pb-5">
         <div class="row">
-            <div class="col-md-8 offset-md-2 pt-5 pb-md-5 pb-2 mt-5 mb-md-5 mb-0 text-left">
+            <div class="col-md-8 offset-md-2 pt-5 pb-md-3 pb-2 mt-5 mb-0 text-left">
                 <div class="mb-4" style="background-image: url('../img/news/cov-id-jatim.jpg');" id="cover-news"></div>
                 <h2>Tembus 8.053 Kasus Positif Covid-19 di Jatim, Gugus Tugas: Tidak Masalah Angkanya Tinggi</h2>
                 <p class="responses" style="font-size: .8rem;">
@@ -120,7 +127,7 @@
                     <span class="mx-2 d-sm-none">|</span>
                     <span class="mt-1 mt-sm-0 d-inline-block"><i class="fas fa-info-circle mr-1 text-danger"></i> Jakarta, 20 Juni 2020</span>
                 </p>
-                <div class="text-justify mt-4 mb-5">
+                <div class="text-justify mt-5 mb-5 px-md-0 px-3">
                     <p style="text-indent: 5em;">Jumlah kasus positif virus corona baru atau Covid-19 di Jawa Timur terus meningkat saat sebagian daerah mulai memasuki masa transisi menuju new normal atau tatanan kehidupan baru. Gugus Tugas Percepatan Penanganan Covid-19 Jawa Timur mengumumkan tambahan 292 kasus positif Covid-19 pada Senin (15/6/2020).</p>
                     <p style="text-indent: 5em;">Jawa Timur merupakan provinsi dengan tambahan kasus tertinggi dalam 24 jam terakhir secara nasional pada 15 Juni. Posisi kedua ditempati DKI Jakarta dengan tambahan 142 kasus.  Sehingga, terdapat 8.053 kasus positif Covid-19 di Jawa Timur hingga saat ini. Dari 292 kasus positif baru itu, jumlah pasien positif terbanyak berasal dari Surabaya dengan 109 kasus.  Lalu, 41 kasus dari Tulungagung, 38 kasus dari Gresik, 29 kasus dari Pasuruan, 27 kasus dari Sidoarjo, 12 kasus dari Jombang, 11 kasus dari Bangkalan, dan sembilan kasus dari Mojokerto. Kemudian, tujuh kasus dari Bojonegoro, masing-masing tiga kasus dari Jember dan Lamongan, serta dua kasus dari Kota Malang. Selain itu, terdapat masing-masing satu kasus dari Pamekasan, Lumajang, Kota Pasuruan, Kabupaten Madiun, dan Pacitan. Ketua Rumpun Kuratif Gugus Tugas Percepatan Penanganan Covid-19 Jawa Timur Joni Wahyudi mengatakan, peningkatan kasus positif bukan masalah.Menurutnya, peningkatan kasus positif merupakan hal positif karena penderita Covid-19 terus terdeteksi, sehingga penanganan bisa dilakukan dengan tepat. "Tidak masalah angka positif Covid-19 di Jawa Timur tinggi, kami justru terus mencari warga yang terkonfirmasi positif Covid-19, khususnya kelompok orang tanpa gejala, untuk memutus rantai penyebaran Covid-19 di Jawa Timur," kata Joni di Gedung Negara Grahadi Surabaya, Senin (15/6/2020) malam.   Gugus tugas akan terus melakukan pelacakan dan tes massal untuk mencari penderita Covid-19 di 38 kabupaten dan kota di Jawa Timur. Langkah itu dilakukan sampai kasus Covid-19 di Jawa Timur menurun. "Warga yang positif akan dilakukan perawatan, karena itu tidak masalah jika angka Covid-19 di Jawa Timur terus naik," kata Joni.</p>
                     <p style="text-indent: 5em;">Selain tambahan kasus positif, jumlah pasien sembuh dari Covid-19 juga bertambah 71 orang pada Senin (15/6/2020). Total terdapat 2.317 pasien sembuh di Jawa Timur. Pasien meninggal juga bertambah 21 orang, sehingga total 638 pasien meninggal karena Covid-19 di Jawa Timur. Pemprov Jawa Timur juga mencatat 8.352 pasien dalam pengawasan dan 26.474 orang dalam pemantauan hingga saat ini.</p>    
@@ -128,17 +135,220 @@
                 <p class="text-left">
                     Sumber berita <a href="https://surabaya.kompas.com/read/2020/06/16/05580941/tembus-8053-kasus-positif-covid-19-di-jatim-gugus-tugas-tidak-masalah?page=all" target="_blank" class="badge badge-info">Surabaya Kompas</a>
                 </p>
+                <div class="tags-news">
+                    <span class="badge badge-light py-3 my-1 px-4 monserrat">Kematian</span>
+                    <span class="badge badge-light py-3 my-1 px-4 monserrat">Positif Covid</span>
+                    <span class="badge badge-light py-3 my-1 px-4 monserrat">Sembuh</span>
+                    <span class="badge badge-light py-3 my-1 px-4 monserrat">Coronavirus</span>    
+                </div>
+                <hr>
+
+                <div class="row">
+                    <div class="col-6 col-sm-6 text-left">
+                        <div>
+                            <div class="like-icon border border-light d-inline-block mr-2">
+                                <i class="far fa-thumbs-up"></i>
+                            </div>
+                            <span style="font-size: 1rem;">14 Likes</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-6 text-right">
+                        <div>
+                            <div class="d-inline-block mt-4 icons-news-soc">
+                                <i class="fab fa-facebook mx-2"></i>
+                                <i class="fab fa-twitter mx-2"></i>
+                                <i class="fab fa-linkedin mx-2"></i>
+                                <i class="far fa-bookmark mx-2"></i>
+                            </div>
+                            <div class="dropdown d-inline-block">
+                                <div class="btn btn-white d-inline-block bg-white btn-toggle-news-soc dropdown-toggle btn-sm" type="button" id="triggerId" data-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-ellipsis-h"></i>
+                                </div>
+                                <div class="dropdown-menu" aria-labelledby="triggerId">
+                                    <a class="dropdown-item" href="#">Report this news</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="col-md-2 position-fixed text-center d-none" id="widget-fix" style="z-index: 1000;">
-                <div class="shadow-sm mx-4 py-md-4 py-3 d-inline-block animate__faster bg-white text-center" id="widget-news" style="border-radius: 20px;">
-                    <div class="widget-menu text-center my-md-3 my-0 mx-md-0 mx-3">
-                        <i class="far fa-thumbs-up"></i>
+                <div class="py-md-4 py-3 d-inline animate__faster bg-white text-center" id="widget-news" style="border-radius: 20px;">
+                    <div class="widget-menu text-center my-md-4 my-0 mx-md-0 mx-3">
+                        <i class="far fa-thumbs-up"></i> <span style="font-size: .7rem;">14</span>
                     </div>
-                    <div class="widget-menu text-center my-md-3 my-0 mx-md-0 mx-3">
-                        <i class="far fa-bookmark"></i>
+                    <div class="widget-menu text-center my-md-4 my-0 mx-md-0 mx-3">
+                        <i class="far fa-bookmark"></i>   <span style="font-size: .7rem;">14</span>
                     </div>
-                    <div class="widget-menu text-center my-md-3 my-0 mx-md-0 mx-3">
-                        <i class="fas fa-share-alt"></i>
+                    <div class="widget-menu text-center my-md-4 my-0 mx-md-0 mx-3">
+                        <i class="fas fa-share-alt"></i> <span style="font-size: .7rem;">14</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-light p-4">
+        <div class="container">
+            <h2></h2>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="comment mb-4 w-100 bg-white rounded shadow-sm border-gray">
+                        <div class="col-md-12 pt-3 pb-2 profile-auth-hide" id="profile-auth">
+                            <div class="d-flex">
+                                <div class="profile-comment">
+                                    <img src="../img/user/user_demo.png" class="w-100" alt="">
+                                </div>
+                                <div class="profile-comment-name ml-3 pt-2">
+                                    <h6 class="monserrat font-weight-bold mb-0">User demo</h6>
+                                </div>    
+                            </div>
+                        </div>
+                        <textarea name="comment" style="resize: none;" id="comment" cols="10" class="form-control border-0 border-gray p-3" placeholder="Write Comment" rows="1"></textarea>
+                        <div class="m-3 text-right d-none" id="btn-publish-parent">
+                            <button class="btn btn-danger shadow-danger px-5 btn-sm rounded-pill">Publish</button>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    $(document).ready(function() {
+                        $('#comment').focusin(function() {
+                            $(this).fadeOut("fast").attr("rows", 9).fadeIn("fast")
+                            $('#profile-auth').removeClass('profile-auth-hide animate__animated animate__fadeOut').addClass('profile-auth-show animate__animated animate__fadeIn');
+                            $('#btn-publish-parent').fadeOut("fast").removeClass('d-none').addClass('d-inline-block').fadeIn("fast")
+                        });
+                        // $('#comment').focusout(function() {
+                        //     $(this).fadeOut("fast").attr("rows", 1).fadeIn("fast")
+                        //     $('#profile-auth').removeClass('profile-auth-show animate__animated animate__fadeIn').addClass('profile-auth-hide animate__animated animate__fadeOut');
+                        //     $('#btn-publish-parent').fadeOut("fast").removeClass('d-inline-block').addClass('d-none').fadeIn("fast")
+                        // });
+                    });
+                </script>
+                <div class="col-md-7">
+                    <div class="comments">
+                        <div class="comment w-100 bg-white rounded shadow-sm p-3 mb-2 border-gray">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="d-flex">
+                                        <div class="profile-comment">
+                                            <img src="../img/developer/aku_ktp.png" class="w-100" alt="">
+                                        </div>
+                                        <div class="profile-comment-name ml-2">
+                                            <h6 class="monserrat font-weight-bold mb-0">Ninno</h6>
+                                            <p class="monserrat" style="font-size: .8rem;">Jun 20, 2020</p>
+                                        </div>    
+                                    </div>
+                                </div>
+                                <div class="col-md-12 monserrat">
+                                    Informasi yang sangat penting nih.. ditunggu informasi selanjutnya yah..
+                                </div>
+                                <div class="col-md-12 mt-2">
+                                    <div class="row">
+                                        <div class="col-6 text-left">
+                                            <i class="far fa-thumbs-up"></i>
+                                        </div>
+                                        <div class="col-6 text-right">
+                                            <div class="d-inline-block">
+                                                <i class="far fa-bookmark"></i>
+                                            </div>
+                                            <div class="dropdown d-inline-block">
+                                                <div class="btn btn-sm btn-white bg-white dropdown-toggle" type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </div>
+                                                <div class="dropdown-menu" aria-labelledby="triggerId">
+                                                    <a class="dropdown-item" href="#">Report comment</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment w-100 bg-white rounded shadow-sm p-3 mb-2 border-gray">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="d-flex">
+                                        <div class="profile-comment">
+                                            <img src="../img/developer/febi.png" class="w-100" alt="">
+                                        </div>
+                                        <div class="profile-comment-name ml-2">
+                                            <h6 class="monserrat font-weight-bold mb-0">Febri</h6>
+                                            <p class="monserrat" style="font-size: .8rem;">Jun 20, 2020</p>
+                                        </div>    
+                                    </div>
+                                </div>
+                                <div class="col-md-12 monserrat">
+                                    Informasinya sangat bermanfaat, jadi semakin jaga kesehatan aja.
+                                </div>
+                                <div class="col-md-12 mt-2">
+                                    <div class="row">
+                                        <div class="col-6 text-left">
+                                            <i class="far fa-thumbs-up"></i>
+                                        </div>
+                                        <div class="col-6 text-right">
+                                            <div class="d-inline-block">
+                                                <i class="far fa-bookmark"></i>
+                                            </div>
+                                            <div class="dropdown d-inline-block">
+                                                <div class="btn btn-sm btn-white bg-white dropdown-toggle" type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </div>
+                                                <div class="dropdown-menu" aria-labelledby="triggerId">
+                                                    <a class="dropdown-item" href="#">Report comment</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment w-100 bg-white rounded shadow-sm p-3 mb-2 border-gray d-none" id="last_comment">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="d-flex">
+                                        <div class="profile-comment">
+                                            <img src="../img/developer/mada.jpg" class="w-100" alt="">
+                                        </div>
+                                        <div class="profile-comment-name ml-2">
+                                            <h6 class="monserrat font-weight-bold mb-0">Mada</h6>
+                                            <p class="monserrat" style="font-size: .8rem;">Jun 20, 2020</p>
+                                        </div>    
+                                    </div>
+                                </div>
+                                <div class="col-md-12 monserrat">
+                                    Berita apaan sih ini ?
+                                </div>
+                                <div class="col-md-12 mt-2">
+                                    <div class="row">
+                                        <div class="col-6 text-left">
+                                            <i class="far fa-thumbs-up"></i>
+                                        </div>
+                                        <div class="col-6 text-right">
+                                            <div class="d-inline-block">
+                                                <i class="far fa-bookmark"></i>
+                                            </div>
+                                            <div class="dropdown d-inline-block">
+                                                <div class="btn btn-sm btn-white bg-white dropdown-toggle" type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </div>
+                                                <div class="dropdown-menu" aria-labelledby="triggerId">
+                                                    <a class="dropdown-item" href="#">Report comment</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-light border-gray w-100 py-3" id="see_last">See all comments ( 1 )</button>
+                        <script>
+                            $(document).ready(function() {
+                                $('#see_last').click(function() {
+                                    $('#last_comment').fadeOut("fast").toggleClass('d-none').fadeIn("fast")
+                                    $(this).addClass('d-none')
+                                });
+                            });
+                        </script>
                     </div>
                 </div>
             </div>
@@ -151,12 +361,12 @@
             if(windowSize >= 767) {
                 $(window).scroll(function() {
                     var top = $(this).scrollTop();
-                    if(top > 80) {
+                    if(top > 20) {
                         $('#widget-fix').removeClass('d-none animate__animated animate__fadeOutUp').addClass('d-block animate__animated animate__fadeInDown');
-                    } if(top <= 80)  {
+                    } if(top <= 20)  {
                         $('#widget-fix').addClass('d-none animate__animated animate__fadeOutUp').removeClass('d-block animate__animated animate__fadeInDown');
                     }
-                    if(top > 1000) {
+                    if(top > 1200) {
                         $('#widget-fix').removeClass('d-block animate__animated animate__fadeInDown').addClass('animate__animated animate__fadeOutUp');
                     }
                 });
@@ -165,6 +375,88 @@
             }
         });
     </script>
+
+
+    <div class="container-fluid p-5 backcover position-relative" style="background-image: url('../img/news/cov-id-jatim.jpg');">
+        <div class="overlay-red"></div>
+        <div class="container position-relative">
+            <h3 class="myfont-arciform text-white">Berita lainnya</h3>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-12">
+                    <div class="card card-other-news card-news-list bg-dark position-relative mt-2 shadow-sm my-3 border-0" onclick="window.location.href = 'news.html'">
+                        <div class="card-head">
+                            <img class="card-img-top position-absolute w-100" src="../img/news/warga_natuna.jpg" alt="berita-covid">
+                            <div class="position-relative text-center w-100 tools-news">
+                                <div class="btn-group">
+                                    <button class="btn btn-transparent px-md-3 px-2 text-white border-light btn-sm"><i class="fas fa-share-alt"></i> Bagikan</button>
+                                    <button class="link-detail btn btn-transparent px-md-3 px-2 text-white border-light btn-sm"><i class="fas fa-eye"></i> Lihat</button>
+                                </div>    
+                            </div>
+                        </div>
+                        <div class="card-body bg-white">
+                            <h6 class="card-title mb-2">Penolakan warga natuna soal karantina WNI</h6>
+                            <p class="responses mb-0" style="font-size: .7rem;">
+                                <span class="d-md-inline-block d-sm-none d-none mr-2"><i class="text-danger fas fa-eye"></i> 1,4k</span>
+                                <span class="d-md-inline-block d-sm-none d-none mr-2"><i class="text-danger fas fa-comments"></i> 520</span>
+                                <span class="d-md-inline-block d-sm-none d-none"><i class="text-danger fas fa-share-alt"></i> 120</span> 
+                                <span class="mx-2 d-md-inline-block d-sm-none d-none">|</span>
+                                <span class="mt-1 mt-sm-0 d-inline-block"><i class="fas fa-info-circle mr-1 text-danger"></i> Jakarta, 20 Mei 2020</span>
+                            </p>
+                            <p class="card-text mb-0 mt-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae, autem eligendi eveniet eum sunt nam.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-12">
+                    <div class="card card-other-news card-news-list bg-dark position-relative mt-2 shadow-sm my-3 border-0" onclick="window.location.href = 'news.html'">
+                        <div class="card-head">
+                            <img class="card-img-top position-absolute w-100" src="../img/news/96_pasien.jpg" alt="berita-covid">
+                            <div class="position-relative text-center w-100 tools-news">
+                                <div class="btn-group">
+                                    <button class="btn btn-transparent px-md-3 px-2 text-white border-light btn-sm"><i class="fas fa-share-alt"></i> Bagikan</button>
+                                    <button class="link-detail btn btn-transparent px-md-3 px-2 text-white border-light btn-sm"><i class="fas fa-eye"></i> Lihat</button>
+                                </div>    
+                            </div>
+                        </div>
+                        <div class="card-body bg-white">
+                            <h6 class="card-title mb-2">Bertambah lagi positif corona 96 pasien</h6>
+                            <p class="responses mb-0" style="font-size: .7rem;">
+                                <span class="d-md-inline-block d-sm-none d-none mr-2"><i class="text-danger fas fa-eye"></i> 1,4k</span>
+                                <span class="d-md-inline-block d-sm-none d-none mr-2"><i class="text-danger fas fa-comments"></i> 520</span>
+                                <span class="d-md-inline-block d-sm-none d-none"><i class="text-danger fas fa-share-alt"></i> 120</span> 
+                                <span class="mx-2 d-md-inline-block d-sm-none d-none">|</span>
+                                <span class="mt-1 mt-sm-0 d-inline-block"><i class="fas fa-info-circle mr-1 text-danger"></i> Jakarta, 20 Mei 2020</span>
+                            </p>
+                            <p class="card-text mb-0 mt-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae, autem eligendi eveniet eum sunt nam.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-12">
+                    <div class="card card-other-news card-news-list bg-dark position-relative mt-2 shadow-sm my-3 border-0" onclick="window.location.href = 'news.html'">
+                        <div class="card-head">
+                            <img class="card-img-top position-absolute w-100" src="../img/news/gelombang_2.jpg" alt="berita-covid">
+                            <div class="position-relative text-center w-100 tools-news">
+                                <div class="btn-group">
+                                    <button class="btn btn-transparent px-md-3 px-2 text-white border-light btn-sm"><i class="fas fa-share-alt"></i> Bagikan</button>
+                                    <button class="link-detail btn btn-transparent px-md-3 px-2 text-white border-light btn-sm"><i class="fas fa-eye"></i> Lihat</button>
+                                </div>    
+                            </div>
+                        </div>
+                        <div class="card-body bg-white">
+                            <h6 class="card-title mb-2">Waspada gelombang 2 corona tanpa gejala</h6>
+                            <p class="responses mb-0" style="font-size: .7rem;">
+                                <span class="d-md-inline-block d-sm-none d-none mr-2"><i class="text-danger fas fa-eye"></i> 1,4k</span>
+                                <span class="d-md-inline-block d-sm-none d-none mr-2"><i class="text-danger fas fa-comments"></i> 520</span>
+                                <span class="d-md-inline-block d-sm-none d-none"><i class="text-danger fas fa-share-alt"></i> 120</span> 
+                                <span class="mx-2 d-md-inline-block d-sm-none d-none">|</span>
+                                <span class="mt-1 mt-sm-0 d-inline-block"><i class="fas fa-info-circle mr-1 text-danger"></i> Jakarta, 20 Mei 2020</span>
+                            </p>
+                            <p class="card-text mb-0 mt-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae, autem eligendi eveniet eum sunt nam.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer class="footer-area footer--light">
         <div class="footer-big py-2 py-sm-4">

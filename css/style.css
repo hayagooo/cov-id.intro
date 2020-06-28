@@ -20,6 +20,13 @@ body {
     background-color: black !important;
     color: white !important;
 }
+.backcover {
+    background-size: cover;
+    background-attachment: fixed;
+}
+.border-gray {
+    border: .3px solid gainsboro;
+}
 .text-black {
     color: black !important;
 }
@@ -34,6 +41,9 @@ body {
 @font-face {
     font-family: poppins;
     src: url(../fonts/Poppins-Regular.ttf);
+}
+.monserrat {
+    font-family: monserrat;
 }
 .map-indo {
     height: 200px;
@@ -139,6 +149,16 @@ button {
     height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, .45);
+}
+.overlay-red {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-color:rgba(238, 65, 65, .45);
 }
 .shadow-danger {
     box-shadow: 0px 5px 10px rgba(241, 96, 96, 0.3);
@@ -605,6 +625,18 @@ a:hover {
     transform: scale(1.1);
     transition: all .3s;
 }
+.like-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 100px;
+    text-align: center;
+    line-height: 70px;
+    font-size: 1.3rem;
+    transition: all .3s;
+}
+.like-icon:hover {
+    box-shadow: 0px .125rem .5rem rgba(0, 0, 0, 0.15);
+}
 .other-news {
     height: 370px;
     overflow-x: hidden !important;
@@ -618,6 +650,7 @@ a:hover {
 .news-other:hover {
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15) !important;
     transform: translateY(-3px);
+    cursor: pointer;
 }
 .img-others_news {
     height: 65px;
@@ -1070,6 +1103,14 @@ a:focus,a:hover {
 }
 #news-list li:hover a , .active-nav_news a {
     color: white !important;
+    cursor: pointer;
+}
+.tags-news span {
+    transition: all .3s;
+}
+.tags-news span:hover {
+    background-color: #ee4141;
+    color: white;
 }
 #news-list li:last-child:hover a {
     color: black !important;
@@ -1196,6 +1237,12 @@ a:focus,a:hover {
 .card-other-news .card-head:hover .tools-news {
     top: 90px !important;
 }
+.card-news-index .card-head:hover .tools-news {
+    top: 160px !important;
+}
+.card-news-berita .card-head:hover .tools-news {
+    top: 200px !important;
+}
 .card-other-news .card-head .tools-news button:hover,
 .card-news .card-head .tools-news button:hover {
     background-color: white;
@@ -1276,6 +1323,20 @@ a:focus,a:hover {
     position: sticky !important;
     top: 100px;
 }
+.icons-news-soc svg,
+.btn-toggle-news-soc svg {
+    font-size: 1.2rem;
+}
+.icons-news-soc svg,
+.btn-toggle-news-soc svg {
+    transition: all .3s;
+}
+.icons-news-soc svg:hover,
+.btn-toggle-news-soc svg:hover {
+    transition: all .3s;
+    cursor: pointer;
+    color: #0275d8 !important;
+}
 #widget-news {
     width: 60px;
 }
@@ -1286,20 +1347,49 @@ a:focus,a:hover {
     position: fixed;
     top: 150px;
 }
+.profile-comment {
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    overflow: hidden;
+}
 @media screen and (max-width: 767px) {
     #widget-news {
         width: 200px;
     }
     .widget-menu {
-        display: inline-block;
+        display: none;
     }
     #widget-fix {
-        position: fixed;
-        bottom: 20px;
+        position: relative;
         text-align: right !important;
-        top: auto;
-        left: 20px;
+        top: 20px;
     }
 }
+.profile-auth-hide {
+    display: none;
+    position: relative;
+    opacity: 0;
+    bottom: -100px;
+    transition: all .3s;
+}
+.profile-auth-show {
+    display: inline-flex;
+    opacity: 1;
+    position: relative;
+    bottom: 0px;
+    transition: all .3s;
+}
+
+/* login page declaration */
+
+.login-page {
+    background: url('../img/lockdown.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+/* end login page declaration */
 /* news detail declaration */
 /* end other page */
