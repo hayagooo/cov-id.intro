@@ -72,23 +72,42 @@
                     <li class="nav-item position-relative menu-item">
                         <a class="nav-link" href="#berita-id">BERITA</a>
                     </li>
-                    <li class="nav-item position-relative menu-item">
+                    <!-- <li class="nav-item position-relative menu-item">
                         <a class="nav-link" href="#pencegahan-id">PENCEGAHAN</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item position-relative menu-item">
-                        <a class="nav-link" href="common/shop.html">TOKO</a>
+                        <a class="nav-link" href="#toko-id">TOKO</a>
                     </li>
                     <li class="nav-item border-0 pt-2 position-relative search-toggle search-lg-toggle px-2">
-                        <i class="fas fa-search"></i>
+                        <i class="fas fa-search icon-search-toggle"></i>
                     </li>
                     <li class="nav-item position-relative ml-md-2">
                         <a class="btn btn-danger rounded-pill shadow-danger text-light px-4 btn-sm mt-1" href="common/login.html" role="button" id="btn-login">
                             <i class="fas fa-user"></i> Login
                         </a>
+                        <div class="dropdown open mx-3">
+                            <button class="btn btn-secondary btn-sm dropdown-toggle rounded-pill shadow-danger px-4" type="button" id="btn-profil" data-toggle="dropdown"
+                                    aria-expanded="false">
+                                        <img src="img/user/user_demo.png" class="rounded-circle" width="20px" alt=""> User
+                                    </button>
+                                    <script>
+                                        $(document).ready(function() {
+                                            $('#logout-portal').click(function() {
+                                                localStorage.removeItem('user')
+                                                window.location.href = 'common/login.html'
+                                            });
+                                        });
+                                    </script>
+                            <div class="dropdown-menu" aria-labelledby="triggerId">
+                                <a class="dropdown-item" href="common/profile.html">Profil</a>
+                                <a class="dropdown-item" id="logout-portal">Logout</a>
+                            </div>
+                        </div>
                     </li>
                 </ul>
             </div>
         </nav>
+
         <div class="bg-danger search-small-nav">
             <div class="container">
                 <div class="row px-md-0 px-3">
@@ -544,19 +563,33 @@
 
     <div class="container-fluid position-relative">
         <div class="container bg-white shadow rounded p-3 position-relative" id="pencegahan-id">
-            <h6 class="mb-4">Apa yang harus kita lakukan di kondisi seperti</h6>
+            <div class="text-center">
+                <h2 class="mb-4 text-danger myfont-arciform">Lakukan 6 Hal</h2>
+            </div>
             <div class="row text-center">
-                <div class="col-md-4 my-md-0 my-3">
-                    <img src="img/illust/articles.svg" height="120px" alt="waspada_corona">
-                    <h6 class="mt-md-4 mt-2">Menjaga kewaspadaan kepada corona</h6>
+                <div class="col-md-4 my-md-0 my-3 pb-3">
+                    <img src="img/icon/masker.png" height="120px" alt="waspada_corona">
+                    <h5 class="mt-md-4 monserrat">Memakai Masker</h5>
                 </div>
-                <div class="col-md-4 my-md-0 my-3">
-                    <img src="img/illust/robot.svg" height="120px" alt="positif_corona">
-                    <h6 class="mt-md-4 mt-2">Ada yang positif terkena virus corona</h6>
+                <div class="col-md-4 my-md-0 my-3 pb-3">
+                    <img src="img/icon/washhand.png" height="120px" alt="positif_corona">
+                    <h5 class="mt-md-4 mt-2 monserrat">Rajin Cuci tangan dengan sabun</h5>
                 </div>
-                <div class="col-md-4 my-md-0 my-3">
-                    <img src="img/illust/doctor.svg" height="120px" alt="meninggal_corona">
-                    <h6 class="mt-md-4 mt-2">Ada yang meninggal disebabkan corona</h6>
+                <div class="col-md-4 my-md-0 my-3 pb-3">
+                    <img src="img/icon/handsanitizer.png" height="120px" alt="meninggal_corona">
+                    <h5 class="mt-md-4 mt-2 monserrat">Gunakan Handsanitizer</h5>
+                </div>
+                <div class="col-md-4 my-md-0 my-3 pb-3">
+                    <img src="img/icon/nope.png" height="120px" alt="meninggal_corona">
+                    <h5 class="mt-md-4 mt-2 monserrat">Tidak berjabat tangan</h5>
+                </div>                
+                <div class="col-md-4 my-md-0 my-3 pb-3">
+                    <img src="img/icon/distancing.png" height="120px" alt="meninggal_corona">
+                    <h5 class="mt-md-4 mt-2 monserrat">Saling jaga jarak / Tidak bergerombol</h5>
+                </div>
+                <div class="col-md-4 my-md-0 my-3 pb-3">
+                    <img src="img/icon/home.png" height="120px" alt="meninggal_corona">
+                    <h5 class="mt-md-4 mt-2 monserrat">Tetap dirumah saja</h5>
                 </div>
             </div>
         </div>
@@ -568,7 +601,7 @@
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-sm-4">
-                        <div class="card my-2 bg-dark position-relative card-toko shadow-sm border-0">
+                        <div onclick="window.location.href = 'common/shop-detail.html'" class="card my-2 bg-dark position-relative card-toko shadow-sm border-0">
                             <img class="card-img-top position-absolute" src="img/toko/penyemprotan.jpg" alt="alat_covid">
                             <div class="card-body bg-white">
                                 <div class="card-category mb-0 py-1 px-4 bg-warning position-absolute">Tekonologi</div>
@@ -583,13 +616,13 @@
                                             <i class="fas fa-star-half-alt text-warning"></i>
                                         </span></h6>  
                                     <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, odit!</p>
-                                    <button class="btn shadow-warning btn-warning px-5 btn-sm">Rp. 500k</button>
+                                    <button onclick="window.location.href = 'common/shop-detail.html'" class="btn shadow-warning btn-warning px-5 btn-sm">Rp. 500k</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-4">
-                        <div class="card my-2 bg-dark position-relative card-toko shadow-sm border-0">
+                        <div onclick="window.location.href = 'common/shop-detail.html'" class="card my-2 bg-dark position-relative card-toko shadow-sm border-0">
                             <img class="card-img-top position-absolute" src="img/toko/drone.jpg" alt="alat_covid">
                             <div class="card-body bg-white">
                                 <div class="card-category mb-0 py-1 px-4 bg-warning position-absolute">Tekonologi</div>
@@ -604,13 +637,13 @@
                                             <i class="fas fa-star text-warning"></i>
                                         </span></h6>  
                                     <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, odit!</p>
-                                    <button class="btn shadow-warning btn-warning px-5 btn-sm">Rp. 10JT</button>
+                                    <button onclick="window.location.href = 'common/shop-detail.html'" class="btn shadow-warning btn-warning px-5 btn-sm">Rp. 10JT</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-4">
-                        <div class="card my-2 bg-dark position-relative card-toko shadow-sm border-0">
+                        <div onclick="window.location.href = 'common/shop-detail.html'" class="card my-2 bg-dark position-relative card-toko shadow-sm border-0">
                             <img class="card-img-top position-absolute" src="img/toko/pencuci.JPG" alt="alat_covid">
                             <div class="card-body bg-white">
                                 <div class="card-category mb-0 py-1 px-4 bg-warning position-absolute">Tekonologi</div>
@@ -625,14 +658,14 @@
                                             <i class="fas fa-star-half-alt text-warning"></i>
                                         </span></h6>  
                                     <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, odit!</p>
-                                    <button class="btn shadow-warning btn-warning px-5 btn-sm">Rp. 220k</button>
+                                    <button onclick="window.location.href = 'common/shop-detail.html'" class="btn shadow-warning btn-warning px-5 btn-sm">Rp. 220k</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="text-right">
-                    <button class="btn btn-danger shadow-danger px-5 rounded-pill mt-3"><i class="fas fa-caret-right"></i> Selengkapnya</button>
+                    <a role="button" href="common/shop.html" class="btn btn-danger shadow-danger px-5 rounded-pill mt-3"><i class="fas fa-caret-right"></i> Selengkapnya</a>
                 </div>
             </div>
         </div>

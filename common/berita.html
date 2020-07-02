@@ -1,3 +1,6 @@
+<!-- Created by Mohammad Khusnul Khuluq  -->
+<!-- Sidescript developer -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,9 +59,9 @@
                     <li class="nav-item position-relative menu-item active-nav">
                         <a class="nav-link text-black" href="berita.html">BERITA</a>
                     </li>
-                    <li class="nav-item position-relative menu-item">
+                    <!-- <li class="nav-item position-relative menu-item">
                         <a class="nav-link text-black" href="#pencegahan-id">PENCEGAHAN</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item position-relative menu-item">
                         <a class="nav-link text-black" href="shop.html">TOKO</a>
                     </li>
@@ -66,6 +69,24 @@
                         <a class="btn btn-danger rounded-pill shadow-danger text-light px-4 btn-sm mt-1" href="login.html" role="button" id="btn-login">
                             <i class="fas fa-user"></i> Login
                         </a>
+                        <div class="dropdown open mx-3">
+                            <button class="btn btn-secondary btn-sm dropdown-toggle rounded-pill shadow-danger px-4" type="button" id="btn-profil" data-toggle="dropdown"
+                                    aria-expanded="false">
+                                        <img src="../img/user/user_demo.png" class="rounded-circle" width="20px" alt=""> User
+                                    </button>
+                                    <script>
+                                        $(document).ready(function() {
+                                            $('#logout-portal').click(function() {
+                                                localStorage.removeItem('user')
+                                                window.location.href = '../common/login.html'
+                                            });
+                                        });
+                                    </script>
+                            <div class="dropdown-menu" aria-labelledby="triggerId">
+                                <a class="dropdown-item" href="profile.html">Profil</a>
+                                <a class="dropdown-item" id="logout-portal">Logout</a>
+                            </div>
+                        </div>
                     </li>
                 </ul>
             </div>

@@ -37,7 +37,7 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-md navbar-light pl-md-5 pl-5">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="../index.html">
                 <img src="../img/favicon.png" width="30px" id="image_nav" class="position-relative" alt="sidescript logo png">
                 <p class="m-0 d-inline position-relative title_show" id="title_nav">COVid</p>
             </a>
@@ -74,9 +74,9 @@
                     <li class="nav-item position-relative menu-item">
                         <a class="nav-link" href="berita.html">BERITA</a>
                     </li>
-                    <li class="nav-item position-relative menu-item">
+                    <!-- <li class="nav-item position-relative menu-item">
                         <a class="nav-link" href="#pencegahan-id">PENCEGAHAN</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item position-relative menu-item">
                         <a class="nav-link" href="shop.html">TOKO</a>
                     </li>
@@ -136,7 +136,7 @@
                                   <input type="checkbox" name="remember" id="remember">
                                   <label for="remember">Remember me</label>
                                 </div>
-                                <button type="submit" class="btn btn-danger shadow-danger rounded-pill w-100 mb-3">Masuk</button>
+                                <button type="button" onclick="login()" id="btn-login" class="btn btn-danger shadow-danger rounded-pill w-100 mb-3">Masuk</button>
                                 <button type="button" class="btn btn-white border border-light rounded-pill w-100" id="btn-google">
                                     <img src="../img/icon/google.png" width="20px" alt="google" class="mr-2"> <span class="position-relative" style="top: 1px;">Login dengan google</span></button>
                             </form>
@@ -151,6 +151,10 @@
 
     <script>
         $(document).ready(function() {
+            $('#btn-login').click(function() { 
+                localStorage.setItem('user', 'active');
+                window.location.href = 'shop.html';
+            })
             $('#btn-daftar').mouseenter(function() {
                 $(this).addClass('btn-light').removeClass('btn-white bg-white')
             });

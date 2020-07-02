@@ -30,6 +30,13 @@ body {
 .text-black {
     color: black !important;
 }
+.btn-white {
+    transition: all .3s;
+    background-color: white;
+}
+.btn-white:hover {
+    background-color: gainsboro;
+}
 @font-face {
     font-family: arciform;
     src: url(../fonts/Arciform.otf);
@@ -428,12 +435,12 @@ header {
     }
 }
 
-#btn-login {
+#btn-login, #btn-profil {
     background: linear-gradient(to right bottom, #ee4141, #b81313);
     width: 100%;
     transition: all .3s;
 }
-#btn-login:hover {
+#btn-login:hover, #btn-profil:hover {
     transform: translateY(-2px);
     background: linear-gradient(to right bottom, #c52525, #7c0b0b);
 }
@@ -681,6 +688,7 @@ a:hover {
 .card-toko {
     overflow: hidden;
     height: 300px;
+    cursor: pointer;
 }
 .card-toko img {
     top: 0;
@@ -754,7 +762,7 @@ a:hover {
 /* team declaration */
 
 #team-awesome {
-    background-image: url('../img/teamwork.jpg');
+    background-image: url('../img/teamwork.png');
     background-size: cover;
     background-attachment: fixed;
     background-position-x: center;
@@ -1392,4 +1400,363 @@ a:focus,a:hover {
 
 /* end login page declaration */
 /* news detail declaration */
+
+
+/* shop page declaration */
+
+.card-shop_banner {
+    height: 250px;
+    position: relative;
+}
+.image-banner-shop {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position-y: -100px;
+    opacity: .7;
+}
+.bg-gradient-banner-shop {
+    background: linear-gradient(to right, rgba(238, 65, 65, 1), rgba(238, 65, 65, .5), rgba(238, 65, 65, 0)) !important;
+    height: 100%;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+.body-ctr {
+    transition: all .2s;
+    position: relative;
+}
+/* .body-ctr:hover {
+    background-color: rgb(241, 241, 241);
+} */
+.ctr-rekomend {
+    height: 119px; 
+    transition: all .3s;
+    line-height: 90px;
+}
+.ctr-rekomend .ctr-name {
+    bottom: -45px !important;
+    display: block;
+}
+.ctr-rekomend:hover {
+    box-shadow: 0 .2rem .5rem rgba(0, 0, 0, .1);
+}
+.ctr-other-bot {
+    transition: all .3s;
+    cursor: pointer;
+}
+.ctr-other-bot:hover {
+    background-color: #f8f9fa;
+}
+.body-ctr::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 0;
+    transition: all .2s;
+    background-color: rgb(255, 255, 255);
+}
+.body-ctr:hover::before {
+    width: 100%;
+    background-color: rgb(245, 245, 245);
+}
+@media screen and (max-width: 767px) {
+    .image-banner-shop {
+        height: 100%;
+        background-position-y: 0;
+        width: 120%;
+        background-size: cover;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+}
+
+.search-shop {
+    top: -1px;
+    height: 30px;
+    width: 100%;
+    background-color: #ee4141 !important;
+    position: relative;
+}
+/* end shop page declaration */
+/* shop detail declaration */
+
+.preview {
+    height: 390px;
+    background-size: cover;
+}
+.preview-nav {
+    height: 100px;
+    background-size: cover;
+}
+.text-label {
+    color: rgb(190, 190, 190);
+}
+.text-price {
+    color: #f88c10;
+}
+.color-pick {
+    background-color: white;
+    border-radius: 8px;
+    font-size: .8rem;
+    transition: all .3s;
+}
+.color-pick:hover {
+    background-color: rgb(241, 241, 241);
+}
+.color-example {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+}
+.btn-tools-jumlah {
+    width: 30px;
+    height: 30px;
+    font-size: .8rem;
+    line-height: 23px;
+    transform: scale(.7);
+}
+.menu .item::after {
+    content: '';
+    width: 100%;
+    height: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: all .3s;
+    background-color: #ee4141;
+}
+.menu .item:hover::after,
+.active-nav-shop::after  {
+    content: '';
+    width: 100%;
+    height: 3px !important;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: all .3s;
+    background-color: #ee4141;
+}
+.menu {
+    position: relative;
+    padding-top: 10px;
+    height: 100%;
+}
+#menu-parent {
+    text-align: right;
+}
+.btn-buy {
+    position: fixed;
+    right: 100px;
+    bottom: 50px;
+    z-index: 10;
+}
+@media screen and (max-width: 767px) {
+    #menu-parent {
+        text-align: center;
+    }
+    .menu {
+        position: relative;
+        padding-top: 10px;
+        height: 50px;
+    }
+    .btn-buy {
+        position: fixed;
+        right: 20px !important;
+        bottom: 20px !important;
+        z-index: 10;
+    }
+}
+.menu .item {
+    position: relative;
+    height: 100%;
+}
+#star5-grafik #grafik,
+#star4-grafik #grafik,
+#star3-grafik #grafik,
+#star2-grafik #grafik,
+#star1-grafik #grafik {
+    width: 50%;
+    height: 5px;
+    position: relative;
+    left: 5px;
+    top: 8px;
+    border-radius: 10px;
+    background-color: gainsboro;
+}
+#star5-grafik #grafik::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 40%;
+    background-color: #ffd720;
+    border-radius: 100px;
+}
+#star4-grafik #grafik::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 30%;
+    background-color: #ffd720;
+    border-radius: 100px;
+}
+#star3-grafik #grafik::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 60%;
+    background-color: #ffd720;
+    border-radius: 100px;
+}
+#star2-grafik #grafik::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 25%;
+    background-color: #ffd720;
+    border-radius: 100px;
+}
+#star1-grafik #grafik::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 5%;
+    background-color: #ffd720;
+    border-radius: 100px;
+}
+.img-tf {
+    height: 100%;
+    width: auto;
+}
+@media screen and (max-width: 767px) {
+    .img-tf {
+        width: 100%;
+        height: auto !important;
+    }
+}
+
+/* donasi */
+
+.bg-donasi {
+    background-image: url('../img/lockdown.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+.preview-donator {
+    width: 70px;
+    height: 70px;
+    border-radius: 70px;
+    position: relative;
+    overflow: hidden;
+}
+.btn-donasi {
+    text-align: left;
+}
+.profile-donator {
+    width:50px;
+    height:50px;
+    border-radius:50px;
+    background-color: #ee4141;
+    overflow: hidden;
+    position: relative;
+}
+.uplause-donator {
+    bottom: 0px;
+    right: 20px;
+    opacity: 0;
+}
+.item_donator .uplause-donator {
+    transition: all .3s;
+}
+.item_donator {
+    transition: all .3s;
+}
+.item_donator:hover {
+    padding-bottom: 1.9rem !important;
+}
+.item_donator:hover .uplause-donator {
+    opacity: 1;
+}
+@media screen and (max-width: 767px) {
+    .btn-donasi {
+        text-align: center;
+    }
+}
+.jenis-donasi {
+    cursor: pointer;
+    transition: all .3s;
+}
+.jenis-donasi:hover {
+    border: 1px solid #28a745 !important;
+}
+/* enddonasi */
+/* end shop detail declaration */
+
+/* team profile */
+.bg-team {
+    background-image: url('../img/teamwork.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position-x: center;
+    background-position-y: center;
+}
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 150px;
+    overflow: hidden;
+    position: relative;
+    border: 5px solid white;
+}
+#img-profile {
+    text-align: left;
+}
+.add-friend {
+    position: absolute;
+    right: 10px;
+    top: 40px;
+}
+.add-friend button {
+    width: 60px;
+    font-size: 1.3rem;
+    height: 60px;
+}
+.profile-name {
+    color: white;
+}
+@media screen and (max-width: 767px) {
+    .profile-name {
+        color: black;
+        text-align: center;
+    }
+    #img-profile {
+        text-align: center;
+    }
+}
+/* end team profile */
 /* end other page */

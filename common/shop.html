@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COVid | Berita</title>
+    <title>COVid | Toko</title>
     <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
     <!-- Include Css file -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
@@ -23,6 +23,7 @@
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/> -->
     <!-- Include Js file -->
     <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/popper.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/bootstrap.js"></script>
     <script src="../js/Chart.min.js"></script>
@@ -37,7 +38,7 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-md navbar-light pl-md-5 pl-5">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="../index.html">
                 <img src="../img/favicon.png" width="30px" id="image_nav" class="position-relative" alt="sidescript logo png">
                 <p class="m-0 d-inline position-relative title_show" id="title_nav">COVid</p>
             </a>
@@ -74,27 +75,48 @@
                     <li class="nav-item position-relative menu-item">
                         <a class="nav-link text-black" href="berita.html">BERITA</a>
                     </li>
-                    <li class="nav-item position-relative menu-item">
+                    <!-- <li class="nav-item position-relative menu-item">
                         <a class="nav-link text-black" href="#pencegahan-id">PENCEGAHAN</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item position-relative menu-item active-nav">
                         <a class="nav-link text-black" href="shop.html">TOKO</a>
+                    </li>
+                    <li class="nav-item border-0 pt-2 position-relative search-shop-toggle px-2">
+                        <i class="fas fa-search icon-search-shop text-danger"></i>
                     </li>
                     <li class="nav-item position-relative ml-md-2">
                         <a class="btn btn-danger rounded-pill shadow-danger text-light px-4 btn-sm mt-1" href="login.html" role="button" id="btn-login">
                             <i class="fas fa-user"></i> Login
                         </a>
+                        <div class="dropdown open mx-3">
+                            <button class="btn btn-secondary btn-sm dropdown-toggle rounded-pill shadow-danger px-4" type="button" id="btn-profil" data-toggle="dropdown"
+                                    aria-expanded="false">
+                                        <img src="../img/user/user_demo.png" class="rounded-circle" width="20px" alt=""> User
+                                    </button>
+                                    <script>
+                                        $(document).ready(function() {
+                                            $('#logout-portal').click(function() {
+                                                localStorage.removeItem('user')
+                                                window.location.href = '../common/login.html'
+                                            });
+                                        });
+                                    </script>
+                            <div class="dropdown-menu" aria-labelledby="triggerId">
+                                <a class="dropdown-item" href="profile.html">Profil</a>
+                                <a class="dropdown-item" id="logout-portal">Logout</a>
+                            </div>
+                        </div>
                     </li>
                 </ul>
             </div>
         </nav>
-        <div class="bg-danger search-small-nav">
+        <div class="search-shop">
             <div class="container">
                 <div class="row px-md-0 px-3">
                     <div class="col-md-6 offset-md-3  position-relative form-search-top">
-                        <form method="POST" class="w-100 position-absolute form-search-small">
+                        <form method="POST" class="w-100 position-absolute form-search-small" style="top: 10px;">
                             <div class="input-group rounded-pill shadow overflow-hidden positon-relative h-100 w-100">
-                                <input type="text" class="form-search-nav-small border-0 w-100 positon-relative h-100 py-2 rounded px-3" placeholder="Cari sesuatu...">
+                                <input type="text" class="form-search-nav-small border-0 w-100 positon-relative h-100 py-2 rounded px-3" placeholder="Cari Barang..">
                                 <div class="input-group-append">
                                     <span class="input-group-text bg-white position-absolute icon-semu-nav-small border-0" id="basic-addon2">
                                         <i class="fas fa-search text-gray"></i>
@@ -108,216 +130,411 @@
         </div>
     </header>
 
-    <div class="container-fluid pb-4" id="toko-id" style="margin-top: 15%;">
-        <center><h1 class="text-danger myfont-arciform">Our Shop</h1></center>
-        <div class="row">
-            <div class="col-md-3" style="margin-top:5%;">
-                <form action="">
-                    <div class="">
-                        <div class="form-group ">
-                            <input type="search" placeholder="Cari Barang..." class="form-control" style="border-left:none; border-top:none; border-right: none; border-radius: 0% !important;">
+    <script>
+        $(document).ready(function() {
+            $('.search-shop-toggle').click(function() {
+                $('.search-shop').slideToggle()
+                $('.icon-search-shop').toggleClass('text-danger')
+                if(!$('.icon-search-shop').hasClass('text-danger')) {
+                    $('.icon-search-shop').addClass('text-dark')
+                } else {
+                    $('.icon-search-shop').removeClass('text-dark').addClass('text-danger')
+                }
+            });
+            $(window).scroll(function() {
+                var top = $(this).scrollTop()
+                if(top >= 100) {
+                    $('.search-shop').addClass('animate__animated animate__fadeInDown')
+                } else {
+                    $('.search-shop').removeClass('animate__animated animate__fadeInDown')
+                }
+            });
+        });
+    </script>
+
+    <div class="container-fluid mt-5 mb-4 pt-5 pb-4">
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="shop-banner">
+                        <div>
+                            <div class="card-shop_banner w-100 rounded bg-danger overflow-hidden">
+                                <div class="image-banner-shop position-absolute" style="background-image: url('../img/toko/drone.jpg');"></div>
+                                <div class="bg-gradient-banner-shop position-absolute w-75"></div>
+                                <div class="position-relative p-md-5 p-4 text-white mt-md-4 mt-0">
+                                    <h3 class="mb-3 monserrat">Hobi menerbangkan drone ? kini bisa dengan melawan virus sekaligus</h3>
+                                    <p class="myfont-arciform"><img src="../img/favicon.png" class="d-inline-block" width="30px" alt="logo"> <span class="position-relative d-inline" style="font-size: 1.2rem; top: 3px;">COVid Shop</span></p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group ">
-                            <h5 style="margin-top: 20%;">Filter :</h5>
+                        <div>
+                            <div class="card-shop_banner w-100 rounded bg-danger overflow-hidden">
+                                <div class="image-banner-shop position-absolute" style="background-image: url('../img/toko/penyemprotan.jpg');"></div>
+                                <div class="bg-gradient-banner-shop position-absolute w-75"></div>
+                                <div class="position-relative p-md-5 p-4 text-white mt-md-4 mt-0">
+                                    <h3 class="mb-3 monserrat">Ayo lawan virus corona seefektif mungkin dengan teknologi yang ada</h3>
+                                    <p class="myfont-arciform"><img src="../img/favicon.png" class="d-inline-block" width="30px" alt="logo"> <span class="position-relative d-inline" style="font-size: 1.2rem; top: 3px;">COVid Shop</span></p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group ">
-                            <input type="text" placeholder="Category" class="form-control" style="border-left:none; border-top:none; border-right: none; border-radius: 0% !important;">
-                        </div>
-                        <div class="form-group ">
-                            <input type="text" placeholder="Price" class="form-control" style="border-left:none; border-top:none; border-right: none; border-radius: 0% !important;">
+                        <div>
+                            <div class="card-shop_banner w-100 rounded bg-danger overflow-hidden">
+                                <div class="image-banner-shop position-absolute" style="background-image: url('../img/toko/maks.jpg');"></div>
+                                <div class="bg-gradient-banner-shop position-absolute w-75"></div>
+                                <div class="position-relative p-md-5 p-4 text-white mt-md-4 mt-0">
+                                    <h3 class="mb-3 monserrat">Setiap pembelian barang, kami donasikan kepada orang orang yang membutuhkan</h3>
+                                    <p class="myfont-arciform"><img src="../img/favicon.png" class="d-inline-block" width="30px" alt="logo"> <span class="position-relative d-inline" style="font-size: 1.2rem; top: 3px;">COVid Shop</span></p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
-            <div class="row mt-4 col-md-9">
-                <div class="col-md-12">
+        </div>
+        <script>
+            $(document).ready(function() {
+                var auth = localStorage.getItem('user');
+                if(auth !== null && auth !== undefined && auth !== "") {
+                    $('#user-menu-shop').removeClass('d-none')
+                    $('#shopping').removeClass('col-md-12').addClass('col-md-9')
+                }
+            });
+        </script>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-md-0 mb-3 d-none" id="user-menu-shop">
+                    <div class="w-100 shadow-sm py-3" style="border-radius: 15px;">
+                        <div class="title-ctr px-3">
+                            <h5>Kotak Masuk</h5>
+                        </div>
+                        <div class="body-ctr px-3 pl-4 py-2 w-100 py">
+                            <p class="monserrat mb-0 position-relative" style="font-size: .85rem;">Diskusi Produk</p>
+                        </div>
+                        <div class="body-ctr px-3 pl-4 py-2 w-100 py">
+                            <p class="monserrat mb-0 position-relative" style="font-size: .85rem;">Ulasan</p>
+                        </div>
+                        <div class="body-ctr px-3 pl-4 py-2 w-100 py">
+                            <p class="monserrat mb-0 position-relative" style="font-size: .85rem;">Pesan Bantuan</p>
+                        </div>
+                        <div class="body-ctr px-3 pl-4 py-2 w-100 py">
+                            <p class="monserrat mb-0 position-relative" style="font-size: .85rem;">Komplain Pesanan</p>
+                        </div>
+                        <div class="body-ctr px-3 pl-4 py-2 w-100 py">
+                            <p class="monserrat mb-0 position-relative" style="font-size: .85rem;">Update</p>
+                        </div>
+                        <hr>
+                        <div class="title-ctr px-3">
+                            <h5>Pembelian</h5>
+                        </div>
+                        <div class="body-ctr px-3 pl-4 py-2 w-100 py">
+                            <p class="monserrat mb-0 position-relative" style="font-size: .85rem;">Pembayaran</p>
+                        </div>
+                        <div class="body-ctr px-3 pl-4 py-2 w-100 py">
+                            <p class="monserrat mb-0 position-relative" style="font-size: .85rem;">Transaksi</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-md-9"> -->
+                <div class="col-md-12" id="shopping">
+                    <div class="w-100 shadow-sm w-100 bg-white p-3 px-4" style="border-radius: 15px;">
+                        <div class="row">
+                            <div class="col-sm-6 mb-md-0 mb-3">
+                                <h4>Kategori Pilihan</h4>
+                                <div class="row">
+                                    <div class="col-4 px-1">
+                                        <div class="text-center rounded-lg border border-light position-relative ctr-rekomend">
+                                            <img src="../img/toko/masker.jpg" class="w-75" alt="">
+                                            <div class="position-absolute ctr-name w-100 text-center">
+                                                <p>Masker</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 px-1">
+                                        <div class="text-center rounded-lg border border-light position-relative ctr-rekomend">
+                                            <img src="../img/toko/apd.jpg" class="h-75" alt="">
+                                            <div class="position-absolute ctr-name w-100 text-center">
+                                                <p>APD</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 px-1">
+                                        <div class="text-center rounded-lg border border-light position-relative ctr-rekomend">
+                                            <img src="../img/toko/Hand-Sanitizer-PNG-Transparent-Image.png" class="w-75" alt="">
+                                            <div class="position-absolute ctr-name w-100 text-center">
+                                                <p>HandSanitizer</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <h4>Filter</h4>
+                                <div class="row border rounded-lg border-light px-2">
+                                    <div class="col-6 py-3 px-1">
+                                        <div class="form-group">
+                                            <label for="from">From Price</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend bg-white">
+                                                    <div class="input-group-text bg-white text-success myfont-arciform">Rp</div>
+                                                </div>
+                                                <input type="number" name="from" id="from" class="form-control border-left-0" min="0" aria-describedby="price-from">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 py-3 px-1">
+                                        <div class="form-group">
+                                            <label for="to">To Price</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend bg-white">
+                                                    <div class="input-group-text bg-white text-success myfont-arciform">Rp</div>
+                                                </div>
+                                                <input type="number" name="to" id="to" class="form-control border-left-0" min="0" aria-describedby="price-from">
+                                            </div>
+                                        </div>
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-3 col-sm-6 col-6 mb-md-0 mb-2">
+                            <div class="w-100 border-gray rounded p-2 pl-4 ctr-other-bot">
+                                <img src="../img/icon/face-mask.svg" width="30px" alt="masek"> Masker
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-6 mb-md-0 mb-2">
+                            <div class="w-100 border-gray rounded p-2 pl-4 ctr-other-bot">
+                                <img src="../img/icon/healthcare-and-medical.svg" width="30px" alt="masek"> Obat
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-6 mb-md-0 mb-2">
+                            <div class="w-100 border-gray rounded p-2 pl-4 ctr-other-bot">
+                                <img src="../img/icon/nutrition.svg" width="30px" alt="masek"> Nutrisi
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-6 mb-md-0 mb-2">
+                            <div class="w-100 border-gray rounded p-2 pl-4 ctr-other-bot">
+                                <img src="../img/icon/robot.svg" width="30px" alt="masek"> Teknologi
+                            </div>
+                        </div>
+                    </div>
+
+                    <script>
+                        $(document).ready(function() {
+                            $('.card-toko').click(function() {
+                                window.location.href = 'shop-detail.html'
+                            });
+                        });
+                    </script>
+                    <div class="row mt-3 d-none">
+                        <div class="col-sm-12" id="rekomend-shop">
+                            <div>
+                                <div class="card my-2 bg-dark position-relative card-toko shadow-sm border-0">
+                                    <img class="card-img-top position-absolute" src="../img/toko/penyemprotan.jpg" alt="alat_covid">
+                                    <div class="card-body bg-white">
+                                        <div class="card-category mb-0 py-1 px-4 bg-warning position-absolute">Tekonologi</div>
+                                        <h5 class="card-title mb-1">Penyemprotan otomatis</h5>
+                                        <div class="card-opsi">
+                                            <h6><span class="badge p-2 badge-light">Tekonologi</span>
+                                                <span class="icon-star-toko mx-2">
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star-half-alt text-warning"></i>
+                                                </span></h6>  
+                                            <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, odit!</p>
+                                            <button class="btn shadow-warning btn-warning px-5 btn-sm" onclick="window.location.href = 'shop-detail.html'">Rp. 500k</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="card my-2 bg-dark position-relative card-toko shadow-sm border-0">
+                                    <img class="card-img-top position-absolute" src="../img/toko/drone.jpg" alt="alat_covid">
+                                    <div class="card-body bg-white">
+                                        <div class="card-category mb-0 py-1 px-4 bg-warning position-absolute">Tekonologi</div>
+                                        <h5 class="card-title mb-1">Drone Disinfektan</h5>
+                                        <div class="card-opsi">
+                                            <h6><span class="badge p-2 badge-light">Tekonologi</span>
+                                                <span class="icon-star-toko mx-2">
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                </span></h6>  
+                                            <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, odit!</p>
+                                            <button class="btn shadow-warning btn-warning px-5 btn-sm" onclick="window.location.href = 'shop-detail.html'">Rp. 10JT</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="card my-2 bg-dark position-relative card-toko shadow-sm border-0">
+                                    <img class="card-img-top position-absolute" src="../img/toko/pencuci.JPG" alt="alat_covid">
+                                    <div class="card-body bg-white">
+                                        <div class="card-category mb-0 py-1 px-4 bg-warning position-absolute">Tekonologi</div>
+                                        <h5 class="card-title mb-1">Iot Pencuci tangan</h5>
+                                        <div class="card-opsi">
+                                            <h6><span class="badge p-2 badge-light">Tekonologi</span>
+                                                <span class="icon-star-toko mx-2">
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star-half-alt text-warning"></i>
+                                                </span></h6>  
+                                            <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, odit!</p>
+                                            <button class="btn shadow-warning btn-warning px-5 btn-sm" onclick="window.location.href = 'shop-detail.html'">Rp. 220k</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-sm-4">
+                            <div class="card my-2 bg-dark position-relative card-toko shadow-sm border-0">
+                                <img class="card-img-top position-absolute" src="../img/toko/1paket_buah.jpeg" alt="alat_covid">
+                                <div class="card-body bg-white">
+                                    <div class="card-category mb-0 py-1 px-4 bg-warning position-absolute">Nutrisi</div>
+                                    <h6 class="card-title mb-1">1 Paket Buah segar</h6>
+                                    <div class="card-opsi pt-2">
+                                        <h6><span class="badge p-2 badge-light">Tekonologi</span>
+                                            <span class="icon-star-toko mx-2">
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star-half-alt text-warning"></i>
+                                            </span></h6>  
+                                        <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, odit!</p>
+                                        <button class="btn shadow-warning btn-warning px-5 btn-sm" onclick="window.location.href = 'shop-detail.html'">Rp. 120k</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card my-2 bg-dark position-relative card-toko shadow-sm border-0">
+                                <img class="card-img-top position-absolute" src="../img/toko/drone.jpg" alt="alat_covid">
+                                <div class="card-body bg-white">
+                                    <div class="card-category mb-0 py-1 px-4 bg-warning position-absolute">Tekonologi</div>
+                                    <h6 class="card-title mb-1">Drone Disinfektan</h6>
+                                    <div class="card-opsi pt-2">
+                                        <h6><span class="badge p-2 badge-light">Nutrisi</span>
+                                            <span class="icon-star-toko mx-2">
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                            </span></h6>  
+                                        <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, odit!</p>
+                                        <button class="btn shadow-warning btn-warning px-5 btn-sm" onclick="window.location.href = 'shop-detail.html'">Rp. 10JT</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card my-2 bg-dark position-relative card-toko shadow-sm border-0">
+                                <img class="card-img-top position-absolute" src="../img/toko/grosir_masker.jpg" alt="alat_covid">
+                                <div class="card-body bg-white">
+                                    <div class="card-category mb-0 py-1 px-4 bg-warning position-absolute">Pakaian</div>
+                                    <h6 class="card-title mb-1">Grosir masker murah</h6>
+                                    <div class="card-opsi pt-2">
+                                        <h6><span class="badge p-2 badge-light">Pakaian</span>
+                                            <span class="icon-star-toko mx-2">
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star-half-alt text-warning"></i>
+                                            </span></h6>  
+                                        <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, odit!</p>
+                                        <button class="btn shadow-warning btn-warning px-5 btn-sm" onclick="window.location.href = 'shop-detail.html'">Rp. 5k</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card my-2 bg-dark position-relative card-toko shadow-sm border-0">
+                                <img class="card-img-top position-absolute" src="../img/toko/penyemprotan.jpg" alt="alat_covid">
+                                <div class="card-body bg-white">
+                                    <div class="card-category mb-0 py-1 px-4 bg-warning position-absolute">Tekonologi</div>
+                                    <h6 class="card-title mb-1">Penyemprotan otomatis</h6>
+                                    <div class="card-opsi pt-2">
+                                        <h6><span class="badge p-2 badge-light">Tekonologi</span>
+                                            <span class="icon-star-toko mx-2">
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star-half-alt text-warning"></i>
+                                            </span></h6>  
+                                        <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, odit!</p>
+                                        <button class="btn shadow-warning btn-warning px-5 btn-sm" onclick="window.location.href = 'shop-detail.html'">Rp. 500k</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card my-2 bg-dark position-relative card-toko shadow-sm border-0">
+                                <img class="card-img-top position-absolute" src="../img/toko/imun_tubuh.jpg" alt="alat_covid">
+                                <div class="card-body bg-white">
+                                    <div class="card-category mb-0 py-1 px-4 bg-warning position-absolute">Obat</div>
+                                    <h6 class="card-title mb-1">Obat ketahanan imun tubuh</h6>
+                                    <div class="card-opsi pt-2">
+                                        <h6><span class="badge p-2 badge-light">Obat</span>
+                                            <span class="icon-star-toko mx-2">
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                            </span></h6>  
+                                        <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, odit!</p>
+                                        <button class="btn shadow-warning btn-warning px-5 btn-sm" onclick="window.location.href = 'shop-detail.html'">Rp. 10k</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card my-2 bg-dark position-relative card-toko shadow-sm border-0">
+                                <img class="card-img-top position-absolute" src="../img/toko/pencuci.JPG" alt="alat_covid">
+                                <div class="card-body bg-white">
+                                    <div class="card-category mb-0 py-1 px-4 bg-warning position-absolute">Tekonologi</div>
+                                    <h6 class="card-title mb-1">Iot Pencuci tangan</h6>
+                                    <div class="card-opsi pt-2">
+                                        <h6><span class="badge p-2 badge-light">Tekonologi</span>
+                                            <span class="icon-star-toko mx-2">
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star-half-alt text-warning"></i>
+                                            </span></h6>  
+                                        <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, odit!</p>
+                                        <button class="btn shadow-warning btn-warning px-5 btn-sm" onclick="window.location.href = 'shop-detail.html'">Rp. 220k</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="row">
-                        <div class="col-sm-4" style="margin-top:5%;">
-                            <div class="card my-2 bg-dark position-relative card-toko shadow-sm border-0">
-                                <img class="card-img-top position-absolute" src="../img/toko/penyemprotan.jpg" alt="alat_covid">
-                                <div class="card-body bg-white">
-                                    <div class="card-category mb-0 py-1 px-4 bg-warning position-absolute">Tekonologi</div>
-                                    <h5 class="card-title mb-1">Penyemprotan otomatis</h5>
-                                    <div class="card-opsi">
-                                        <h6><span class="badge p-2 badge-light">Tekonologi</span>
-                                            <span class="icon-star-toko mx-2">
-                                                <i class="fas fa-star text-warning"></i>
-                                                <i class="fas fa-star text-warning"></i>
-                                                <i class="fas fa-star text-warning"></i>
-                                                <i class="fas fa-star text-warning"></i>
-                                                <i class="fas fa-star-half-alt text-warning"></i>
-                                            </span></h6>  
-                                        <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, odit!</p>
-                                        <button class="btn shadow-warning btn-warning px-5 btn-sm">Rp. 500k</button>
-                                    </div>
-                                </div>
+                        <div class="col-md-6">
+                            <div class="d-inline-block text-left mt-3">
+                                <button onclick="window.location.href = 'donasi.html'" class="btn btn-warning shadow-danger px-5 rounded-pill"><i class="fas fa-hands-helping "></i> Donasi</button>
                             </div>
                         </div>
-                        <div class="col-sm-4" style="margin-top:5%;">
-                            <div class="card my-2 bg-dark position-relative card-toko shadow-sm border-0">
-                                <img class="card-img-top position-absolute" src="../img/toko/drone.jpg" alt="alat_covid">
-                                <div class="card-body bg-white">
-                                    <div class="card-category mb-0 py-1 px-4 bg-warning position-absolute">Tekonologi</div>
-                                    <h5 class="card-title mb-1">Drone Disinfektan</h5>
-                                    <div class="card-opsi">
-                                        <h6><span class="badge p-2 badge-light">Tekonologi</span>
-                                            <span class="icon-star-toko mx-2">
-                                                <i class="fas fa-star text-warning"></i>
-                                                <i class="fas fa-star text-warning"></i>
-                                                <i class="fas fa-star text-warning"></i>
-                                                <i class="fas fa-star text-warning"></i>
-                                                <i class="fas fa-star text-warning"></i>
-                                            </span></h6>  
-                                        <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, odit!</p>
-                                        <button class="btn shadow-warning btn-warning px-5 btn-sm">Rp. 10JT</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4" style="margin-top:5%;">
-                            <div class="card my-2 bg-dark position-relative card-toko shadow-sm border-0">
-                                <img class="card-img-top position-absolute" src="../img/toko/pencuci.JPG" alt="alat_covid">
-                                <div class="card-body bg-white">
-                                    <div class="card-category mb-0 py-1 px-4 bg-warning position-absolute">Tekonologi</div>
-                                    <h5 class="card-title mb-1">Iot Pencuci tangan</h5>
-                                    <div class="card-opsi">
-                                        <h6><span class="badge p-2 badge-light">Tekonologi</span>
-                                            <span class="icon-star-toko mx-2">
-                                                <i class="fas fa-star text-warning"></i>
-                                                <i class="fas fa-star text-warning"></i>
-                                                <i class="fas fa-star text-warning"></i>
-                                                <i class="fas fa-star text-warning"></i>
-                                                <i class="fas fa-star-half-alt text-warning"></i>
-                                            </span></h6>  
-                                        <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, odit!</p>
-                                        <button class="btn shadow-warning btn-warning px-5 btn-sm">Rp. 220k</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4" style="margin-top:5%;">
-                            <div class="card my-2 bg-dark position-relative card-toko shadow-sm border-0">
-                                <img class="card-img-top position-absolute" src="../img/toko/penyemprotan.jpg" alt="alat_covid">
-                                <div class="card-body bg-white">
-                                    <div class="card-category mb-0 py-1 px-4 bg-warning position-absolute">Tekonologi</div>
-                                    <h5 class="card-title mb-1">Penyemprotan otomatis</h5>
-                                    <div class="card-opsi">
-                                        <h6><span class="badge p-2 badge-light">Tekonologi</span>
-                                            <span class="icon-star-toko mx-2">
-                                                <i class="fas fa-star text-warning"></i>
-                                                <i class="fas fa-star text-warning"></i>
-                                                <i class="fas fa-star text-warning"></i>
-                                                <i class="fas fa-star text-warning"></i>
-                                                <i class="fas fa-star-half-alt text-warning"></i>
-                                            </span></h6>  
-                                        <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, odit!</p>
-                                        <button class="btn shadow-warning btn-warning px-5 btn-sm">Rp. 500k</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4" style="margin-top:5%;">
-                            <div class="card my-2 bg-dark position-relative card-toko shadow-sm border-0">
-                                <img class="card-img-top position-absolute" src="../img/toko/drone.jpg" alt="alat_covid">
-                                <div class="card-body bg-white">
-                                    <div class="card-category mb-0 py-1 px-4 bg-warning position-absolute">Tekonologi</div>
-                                    <h5 class="card-title mb-1">Drone Disinfektan</h5>
-                                    <div class="card-opsi">
-                                        <h6><span class="badge p-2 badge-light">Tekonologi</span>
-                                            <span class="icon-star-toko mx-2">
-                                                <i class="fas fa-star text-warning"></i>
-                                                <i class="fas fa-star text-warning"></i>
-                                                <i class="fas fa-star text-warning"></i>
-                                                <i class="fas fa-star text-warning"></i>
-                                                <i class="fas fa-star text-warning"></i>
-                                            </span></h6>  
-                                        <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, odit!</p>
-                                        <button class="btn shadow-warning btn-warning px-5 btn-sm">Rp. 10JT</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4" style="margin-top:5%;">
-                            <div class="card my-2 bg-dark position-relative card-toko shadow-sm border-0">
-                                <img class="card-img-top position-absolute" src="../img/toko/pencuci.JPG" alt="alat_covid">
-                                <div class="card-body bg-white">
-                                    <div class="card-category mb-0 py-1 px-4 bg-warning position-absolute">Tekonologi</div>
-                                    <h5 class="card-title mb-1">Iot Pencuci tangan</h5>
-                                    <div class="card-opsi">
-                                        <h6><span class="badge p-2 badge-light">Tekonologi</span>
-                                            <span class="icon-star-toko mx-2">
-                                                <i class="fas fa-star text-warning"></i>
-                                                <i class="fas fa-star text-warning"></i>
-                                                <i class="fas fa-star text-warning"></i>
-                                                <i class="fas fa-star text-warning"></i>
-                                                <i class="fas fa-star-half-alt text-warning"></i>
-                                            </span></h6>  
-                                        <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, odit!</p>
-                                        <button class="btn shadow-warning btn-warning px-5 btn-sm">Rp. 220k</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4" style="margin-top:5%;">
-                            <div class="card my-2 bg-dark position-relative card-toko shadow-sm border-0">
-                                <img class="card-img-top position-absolute" src="../img/toko/penyemprotan.jpg" alt="alat_covid">
-                                <div class="card-body bg-white">
-                                    <div class="card-category mb-0 py-1 px-4 bg-warning position-absolute">Tekonologi</div>
-                                    <h5 class="card-title mb-1">Penyemprotan otomatis</h5>
-                                    <div class="card-opsi">
-                                        <h6><span class="badge p-2 badge-light">Tekonologi</span>
-                                            <span class="icon-star-toko mx-2">
-                                                <i class="fas fa-star text-warning"></i>
-                                                <i class="fas fa-star text-warning"></i>
-                                                <i class="fas fa-star text-warning"></i>
-                                                <i class="fas fa-star text-warning"></i>
-                                                <i class="fas fa-star-half-alt text-warning"></i>
-                                            </span></h6>  
-                                        <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, odit!</p>
-                                        <button class="btn shadow-warning btn-warning px-5 btn-sm">Rp. 500k</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4" style="margin-top:5%;">
-                            <div class="card my-2 bg-dark position-relative card-toko shadow-sm border-0">
-                                <img class="card-img-top position-absolute" src="../img/toko/drone.jpg" alt="alat_covid">
-                                <div class="card-body bg-white">
-                                    <div class="card-category mb-0 py-1 px-4 bg-warning position-absolute">Tekonologi</div>
-                                    <h5 class="card-title mb-1">Drone Disinfektan</h5>
-                                    <div class="card-opsi">
-                                        <h6><span class="badge p-2 badge-light">Tekonologi</span>
-                                            <span class="icon-star-toko mx-2">
-                                                <i class="fas fa-star text-warning"></i>
-                                                <i class="fas fa-star text-warning"></i>
-                                                <i class="fas fa-star text-warning"></i>
-                                                <i class="fas fa-star text-warning"></i>
-                                                <i class="fas fa-star text-warning"></i>
-                                            </span></h6>  
-                                        <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, odit!</p>
-                                        <button class="btn shadow-warning btn-warning px-5 btn-sm">Rp. 10JT</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4" style="margin-top:5%;">
-                            <div class="card my-2 bg-dark position-relative card-toko shadow-sm border-0">
-                                <img class="card-img-top position-absolute" src="../img/toko/pencuci.JPG" alt="alat_covid">
-                                <div class="card-body bg-white">
-                                    <div class="card-category mb-0 py-1 px-4 bg-warning position-absolute">Tekonologi</div>
-                                    <h5 class="card-title mb-1">Iot Pencuci tangan</h5>
-                                    <div class="card-opsi">
-                                        <h6><span class="badge p-2 badge-light">Tekonologi</span>
-                                            <span class="icon-star-toko mx-2">
-                                                <i class="fas fa-star text-warning"></i>
-                                                <i class="fas fa-star text-warning"></i>
-                                                <i class="fas fa-star text-warning"></i>
-                                                <i class="fas fa-star text-warning"></i>
-                                                <i class="fas fa-star-half-alt text-warning"></i>
-                                            </span></h6>  
-                                        <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, odit!</p>
-                                        <button class="btn shadow-warning btn-warning px-5 btn-sm">Rp. 220k</button>
-                                    </div>
+                        <div class="col-md-6">
+                            <div class="text-right mt-3">
+                                <div class="btn-group rounded-pill">
+                                    <button class="btn btn-danger"><i class="fas fa-caret-left"></i></button>
+                                    <button class="btn btn-danger">1</button>
+                                    <button class="btn btn-danger">2</button>
+                                    <button class="btn btn-danger">3</button>
+                                    <button class="btn btn-danger"><i class="fas fa-caret-right"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -326,6 +543,16 @@
             </div>
         </div>
     </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#from').keydown(function() {
+                var value = $(this).val()
+                var setValue = parseInt(value) + parseInt(10000)
+                $('#to').attr('min', setValue)
+            });
+        });
+    </script>
 
     <footer class="footer-area footer--light">
         <div class="footer-big py-2 py-sm-4">
@@ -442,3 +669,6 @@
         </div>
     </footer>
 </body>
+
+
+
